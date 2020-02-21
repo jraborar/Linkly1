@@ -1,0 +1,16 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-selected-lesson-type">
+	<span><#= this.model.get('lesson_type') ? this.model.get('types')[this.model.get('lesson_type')].label : '<?php echo __( 'Lesson Type' ) ?>' #></span>
+</div>
+<ul class="tva-lessons-types-list"></ul>

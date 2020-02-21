@@ -1,0 +1,13 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<li class="tva-single-<#= type #>-item" data-<#= type #>-id="<#= model.get('ID') #>"><#= type === 'course' ? model.get('name') : model.get('post_title') #></li>

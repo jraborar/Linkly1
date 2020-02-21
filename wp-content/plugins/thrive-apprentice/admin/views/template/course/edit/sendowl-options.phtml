@@ -1,0 +1,76 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-sendowl-course-card">
+	<h3><?php echo __( 'SendOwl protection options', 'thrive-apprentice' ) ?></h3>
+	<p><?php echo __( 'Select the products/bundles that a user needs to have previously bought in order to have access to the course.', 'thrive-apprentice' ) ?></p>
+
+	<# if(disabled) { #>
+	<div class="tva-sendowl-notice">
+		<# if(! ThriveApp.globals.settings.get('checkout_page_url')) { #>
+		<div class="tva-warning tva-notice-extra">
+			<span class="svg-container"><?php tva_get_svg_icon( 'info-icon' ); ?></span>
+			<h3><?php echo __( 'Checkout Page Not Set', 'thrive-apprentice' ) ?></h3>
+			<p>
+				<?php
+				$url  = get_admin_url() . 'admin.php?page=tva_dashboard#sendowl_checkout';
+				$text = "The checkout page hasn't been set. %s to set it.";
+
+				echo sprintf( $text, '<a href="' . $url . '">' . __( 'Click here', 'thrive-apprentice' ) . '</a>' );
+
+				?>
+				<?php echo __( ' Please make sure to save the current course settings in order not to lose the current progress.', 'thrive-apprentice' ) ?>
+			</p>
+		</div>
+		<# } #>
+
+		<# if(! ThriveApp.globals.settings.get('account_keys').secret) { #>
+		<div class="tva-warning tva-notice-extra">
+			<span class="svg-container"><?php tva_get_svg_icon( 'info-icon' ); ?></span>
+			<h3><?php echo __( 'Account Keys Missing', 'thrive-apprentice' ) ?></h3>
+			<p>
+				<?php
+				$text = 'The SendOwl account keys are missing. You can %s to set them. Please make sure to save the current course settings in order not to lose the current progress.';
+				$url  = get_admin_url() . 'admin.php?page=tva_dashboard#sendowl_integration';
+
+				echo sprintf( $text, '<a href="' . $url . '">' . __( 'click here', 'thrive-apprentice' ) . '</a>' );
+				?>
+			</p>
+
+		</div>
+		<# } #>
+	</div>
+	<# } #>
+
+	<# if(!disabled) { #>
+	<div class="tva-mm-levels <#= disabled ? 'tva-disabled-box' : '' #>">
+		<span><?php echo __( 'User has one of the following products', 'thrive-apprentice' ) ?></span>
+		<div class="tva-mm-lb-holder">
+			<div id="tva-sendowl-levels"></div>
+		</div>
+	</div>
+	<div class="tva-mm-bundles <#= disabled ? 'tva-disabled-box' : '' #>">
+		<span><?php echo __( 'And/or has one of the following bundles', 'thrive-apprentice' ) ?></span>
+		<div class="tva-mm-lb-holder">
+			<div id="tva-sendowl-bundles"></div>
+		</div>
+	</div>
+	<# } #>
+
+	<div class="sendowl-products-loader">
+		<h4><?php echo __( 'Refreshing product list', 'thrive-apprentice' ) ?>&hellip;</h4>
+		<p><?php echo __( 'This may take a minute or two if you have many products in your SendOwl account.', 'thrive-apprentice' ) ?></p>
+	</div>
+
+	<a href="javascript:void(0)" class="tva-sendowl-button tva-refresh-memberships <#= disabled ? "tvd-disabled" : ""#> "><?php echo __( 'Refresh product list','thrive-apprentice' ) ?></a>
+	<a href="javascript:void(0)" class="tva-sendowl-button tva-sendowl-fetch tvd-disabled "><?php echo __( 'Fetching products','thrive-apprentice' ) ?>&hellip;</a>
+</div>

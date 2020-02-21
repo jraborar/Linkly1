@@ -1,0 +1,41 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Add Course Content', TVA_Const::T ) ?></h3>
+		<p><?php echo __( 'Choose whether to add a module, chapter or a lesson.', TVA_Const::T ) ?></p>
+		<p><?php echo __( 'Lessons contain your course content. Modules and chapters are used to organize your lessons in a logical structure.', TVA_Const::T ) ?></p>
+
+		<div class="tva-modal-buttons tva-more-space">
+			<a href="javascript:void(0)" class="tva-modal-next-step" id="lesson" data-level="0">&plus;&nbsp;<?php echo __( 'Add Lesson', TVA_Const::T ) ?></a>
+			<a href="javascript:void(0)" class="tva-modal-next-step" id="chapter" data-level="1">&plus;&nbsp;<?php echo __( 'Add Chapter', TVA_Const::T ) ?></a>
+			<a href="javascript:void(0)" class="tva-modal-next-step" id="module" data-level="2">&plus;&nbsp;<?php echo __( 'Add Module', TVA_Const::T ) ?></a>
+		</div>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<div class="tva-decision-container"></div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<div class="tva-editor-container tva-no-margin"></div>
+	</div>
+</div>

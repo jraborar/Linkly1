@@ -1,0 +1,63 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tva-sendowl-settings"><?php echo __( 'SendOwl Settings', TVA_Const::T ) ?></h3>
+
+<div id="tva-settings-list" class="tva-sendowl-dash">
+	<div class="tva-sendowl-card tva-start-card">
+		<?php tva_get_svg_icon( 'map-sign' ); ?>
+		<h3><?php echo __( 'Start Here', TVA_Const::T ) ?></h3>
+		<p>
+			<?php echo __( 'Not sure where to begin? Follow our quick start guide and sell your first product within an hour', TVA_Const::T ) ?>
+		</p>
+		<a href="#sendowl_quick_start" class="tva-sendowl-button"><?php echo __( 'Quick Start Guide', TVA_Const::T ) ?></a>
+	</div>
+	<div class="tva-sendowl-card">
+		<h3><?php echo __( 'Checkout Settings', TVA_Const::T ) ?></h3>
+		<p>
+			<?php echo __( 'Set up the checkout page your customers will see when purchasing', TVA_Const::T ) ?>
+		</p>
+		<div class="tvd-card-action tvd-center">
+			<a href="#sendowl_checkout" class="tva-sendowl-button"><?php echo __( 'Checkout Settings', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+	<div class="tva-sendowl-card">
+		<h3><?php echo __( 'Integration Settings', TVA_Const::T ) ?></h3>
+		<p>
+			<?php echo __( 'Set up the SendOwl Listener', TVA_Const::T ) ?>
+		</p>
+		<a href="#sendowl_integration" class="tva-sendowl-button"><?php echo __( 'Integrate with SendOwl', TVA_Const::T ) ?></a>
+	</div>
+	<div class="tva-sendowl-card">
+		<h3><?php echo __( 'Purchase Links', TVA_Const::T ) ?></h3>
+		<p>
+			<?php echo __( 'Get Purchase links for each of your SendOwl products', TVA_Const::T ) ?>
+		</p>
+		<a href="#sendowl_links" class="tva-sendowl-button"><?php echo __( 'Get Purchase Links', TVA_Const::T ) ?></a>
+	</div>
+	<div class="tva-sendowl-card">
+		<h3><?php echo __( 'SendOwl Logs', TVA_Const::T ) ?></h3>
+		<p>
+			<?php echo __( 'View log of all messages received from SendOwl', TVA_Const::T ) ?>
+		</p>
+		<a href="#sendowl_logs" class="tva-sendowl-button"><?php echo __( 'View Logs', TVA_Const::T ) ?></a>
+	</div>
+		<div class="tva-sendowl-card">
+		<h3><?php echo __( 'SendOwl Customers List', TVA_Const::T ) ?></h3>
+		<p>
+			<?php echo __( 'Manage access to all customers that have purchased through SendOwl', TVA_Const::T ) ?>
+		</p>
+		<a href="#sendowl_customers" class="tva-sendowl-button"><?php echo __( 'View Customers', TVA_Const::T ) ?></a>
+	</div>
+</div>
+
+<a class="back-to-the-dashboard" href="#dashboard">&lt;&nbsp;<?php echo __( 'Back to Dashboard', TVA_Const::T ) ?></a>

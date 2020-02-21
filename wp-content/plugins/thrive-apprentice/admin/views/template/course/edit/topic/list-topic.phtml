@@ -1,0 +1,20 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-search-topics tva-hide">
+	<input id="tva-search-topics" type="text" placeholder="Search topics">
+</div>
+<div class="tva-topics-list"></div>
+<div id="tva-course-topic">
+	<?php tva_get_svg_icon( 'plus-circle' ); ?>
+	<a href="#topics"><?php echo __( 'Add New Topics', TVA_Const::T ) ?></a>
+</div>

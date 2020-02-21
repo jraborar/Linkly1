@@ -1,0 +1,14 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<input id="tva-filter-topic-<#=  model.get('ID') #>" type="checkbox" class="tva-filter-topic" <#=  model.get('checked') ? 'checked' : '' #> value="<#=  model.get('ID') #>" />
+<label for="tva-filter-topic-<#=  model.get('ID') #>"><#= model.get('title') #></label>

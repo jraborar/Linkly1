@@ -1,0 +1,47 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3><?php echo __( 'API Account Keys', TVA_Const::T ) ?></h3>
+<p class="sendowl-p">
+	<?php echo __( 'Copy and paste the API Account Keys from your SendOwl account. You can find them under ', TVA_Const::T ) ?>
+	<span>
+		<a href="https://www.sendowl.com/settings/api_credentials" target="_blank"><?php echo __( 'Settings / API', TVA_Const::T ) ?></a>
+	</span>
+</p>
+
+<div class="tva-m">
+	<span class="url"><?php echo __( 'Account Key', TVA_Const::T ) ?></span>
+	<input id="tva-account-key" placeholder="<?php echo __( 'Account Key:', TVA_Const::T ) ?>" class="tva-sendowl-input" type="text" data-attr="key"
+	       value="<#= model.get('key') #>">
+</div>
+<div class="tva-m">
+	<span class="url"><?php echo __( 'Account Secret', TVA_Const::T ) ?></span>
+	<input id="tva-account-secret" placeholder="<?php echo __( 'Account Secret', TVA_Const::T ) ?>" class="tva-sendowl-input" type="text" data-attr="secret"
+	       value="<#= model.get('secret') #>">
+</div>
+<a class="tva-sendowl-button tva-save-keys" href="javascript:void(0)"><?php echo __( 'Save Keys', TVA_Const::T ) ?></a>
+
+<div class="tva-warnings">
+
+	<div class="tva-message tva-hide" id="wrong_key"><?php echo __( 'The account key is the same as the api key.', TVA_Const::T ) ?></div>
+	<div class="tva-message tva-hide" id="wrong_secret"><?php echo __( 'The secret key is the same as the api secret key.', TVA_Const::T ) ?></div>
+	<div class="tva-message tva-hide" id="so_msg">
+		<span>
+			<?php echo __( 'Check the ', TVA_Const::T ); ?>
+			<a href="https://www.sendowl.com/settings/api_credentials" target="_blank">
+				<?php echo __( 'Settings / API', TVA_Const::T ) ?>
+			</a>
+			<?php echo __( ' section and make sure that the ACCOUNT KEYS are correct', TVA_Const::T ); ?>
+		</span>
+	</div>
+
+</div>

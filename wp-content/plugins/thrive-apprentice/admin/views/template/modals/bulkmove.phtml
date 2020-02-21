@@ -1,0 +1,39 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tva-modal-step">
+	<div class="tvd-modal-content tva-modal-move-selected">
+		<h3 class="tvd-modal-title"><?php echo __( 'Where should we move the selected items to?', TVA_Const::T ) ?></h3>
+		<p><?php echo __( 'Please choose the destination course:', TVA_Const::T ) ?></p>
+		<div class="tvd-row">
+			<div class="tva-from-course">
+				<?php echo __( 'From:', TVA_Const::T ) ?>
+			</div>
+			<div class="tva-sender-course">
+				<span><#= model.get('name') #></span>
+			</div>
+		</div>
+		<div class="tvd-row">
+			<div class="tva-to-course">
+				<?php echo __( 'To:', TVA_Const::T ) ?>
+			</div>
+			<div class="tva-move-container">
+				<div class="tva-move-item tva-receiver-course"></div>
+				<div class="tva-move-item tva-receiver-module"></div>
+				<div class="tva-move-item tva-receiver-chapter"></div>
+			</div>
+		</div>
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-modal-submit tvd-disabled tvd-right tva-move-lessons"><?php echo __( 'Move Items', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>

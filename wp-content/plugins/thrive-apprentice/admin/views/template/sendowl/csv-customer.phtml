@@ -1,0 +1,16 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-csv-customer-details <#= ! model.get( 'is_valid' ) ? 'tva-invalid-customer' : '' #>">
+	<div><p><#= model.get('display_name') #></p></div>
+	<div><p><#= model.get('user_email') #></p></div>
+</div>

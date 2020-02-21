@@ -1,0 +1,14 @@
+<span class="icon-integration-<#= model.getIntegration() #>"></span>
+<p>
+	<span><#= model.toString() #>: </span>
+	<span class="tva-items-names"><#= model.getItemsToString() #></span>
+</p>
+
+<div class="tva-right-container">
+	<span class="tva-edit-access-rule click" data-fn="editRule">
+		<?php tva_get_svg_icon( 'arrow-upd' ); ?>
+	</span>
+	<span class="click" data-fn="deleteRule" data-params="<#= model.cid #>">
+		<?php tva_get_svg_icon( 'trash-alt' ); ?>
+	</span>
+</div>

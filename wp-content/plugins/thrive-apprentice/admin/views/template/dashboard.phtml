@@ -1,0 +1,56 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-add-filter">
+	<div>
+		<h3><?php echo __( 'Courses', TVA_Const::T ) ?></h3>
+		<a href="#add_course" class="tva-main-add-course"> <?php echo __( 'Add New', TVA_Const::T ) ?> </a>
+	</div>
+
+	<div>
+		<span class="tva-toggle-filters">
+			<?php echo __( 'Filter by Topics', TVA_Const::T ) ?>
+		</span>
+		<div class="tva-filters-wrapper" style="display: none;">
+			<ul class="tva-filters-container"></ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="" id="tva-no-courses-text">
+	<p>
+		<?php echo sprintf(
+			__( "You don't have any courses set up yet. Click %s below to start setting up your first one or %s.", TVA_Const::T ),
+			'<strong>' . __( 'New Course', TVA_Const::T ) . '</strong>',
+			tva_wistia_video( 'tohjipm8wn', __( 'watch a Quick Start Tutorial', TVA_Const::T ), '', false )
+		) ?>
+	</p>
+</div>
+
+<div class="" id="tva-one-courses-text">
+	<p>
+		<strong><?php echo __( 'Notice: ', TVA_Const::T ) ?></strong><?php echo __( 'You only have one course set up. When your users will visit your Courses page they will be redirected directly to this course.', TVA_Const::T ) ?>
+	</p>
+</div>
+
+<div class="ui-sortable" id="tva-courses-list">
+	<div class="tva-add-course tvd-pointer">
+		<div class="tvd-card tvd-large tvd-card-new tvd-valign-wrapper">
+			<div class="tvd-card-content tvd-valign tvd-center-align">
+
+				<?php tva_get_svg_icon( 'new-course' ); ?>
+				<h4><?php echo __( 'Add New Course', TVA_Const::T ) ?></h4>
+			</div>
+		</div>
+	</div>
+</div>

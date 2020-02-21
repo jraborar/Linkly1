@@ -1,0 +1,78 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-sendowl-customers">
+
+<h3 class="tva-sendowl-settings"><?php echo __( 'SendOwl Customers List', TVA_Const::T ) ?></h3>
+
+<div class="add-imp-customer">
+	<div class="tva-add-customer" id="tva-add-customer">
+		<?php tva_get_svg_icon( 'user-plus' ); ?>
+		<?php echo __( 'Add Customer', TVA_Const::T )?>
+	</div>
+	<div class="tva-import-customer">
+		<?php tva_get_svg_icon( 'cloud-download' ); ?>
+		<span><?php echo __( 'Customer Import', TVA_Const::T )?></span>
+		<?php tva_get_svg_icon( 'caret-up' ); ?>
+		<ul class="import-options">
+			<li class="tva-csv-import" ><?php tva_get_svg_icon( 'csv' ); ?><?php echo __( 'CSV File from SendOwl', TVA_Const::T )?></li>
+			<li class="tva-list-import"><?php tva_get_svg_icon( 'clipboard-list' ); ?><?php echo __( 'List of names and emails', TVA_Const::T )?></li>
+		</ul>
+	</div>
+</div>
+
+<div class="tva-filters-container">
+	<div class="tva-products-filter">
+		<div class="tva-selected-product-item tva-dropdown">
+			<#= filters.current_product.get( 'name' ) ? filters.current_product.get( 'name' ) : '<?php echo __( 'All Products ', TVA_Const::T ) ?>' #>
+		</div>
+		<ul class="tva-available-products tva-material-list"></ul>
+	</div>
+	<div class="tva-bundles-filter">
+		<div class="tva-selected-bundle-item tva-dropdown">
+			<#= filters.current_bundle.get( 'name' ) ? filters.current_bundle.get( 'name' ) : '<?php echo __( 'All Bundles ', TVA_Const::T ) ?>' #>
+		</div>
+		<ul class="tva-available-bundles tva-material-list"></ul>
+	</div>
+	<div class="tva-search-filter">
+		<div class="tvd-input-field container-for-search-users">
+			<input id="tva-search-customers" type="text" value="<#= filters.s #>" data-field="search_customers" placeholder="Search users&hellip;" class="ui-autocomplete-input" autocomplete="off">
+			<?php tva_get_svg_icon( 'search-icon' ); ?>
+		</div>
+	</div>
+</div>
+<div class="tva-customers-table"></div>
+<# if ( pagination.total_pages > 0 ) { #>
+	<div class="tva-customers-pagination">
+		<div class="tva-pagination">
+			<a href="javascript:void(0)" class="tva-pg-element tva-pg-prev <#= pagination.current_page === 1 ? 'tva-pg-disabled' : ''#>">&laquo;</a>
+
+			<# pagination.pages.forEach( function ( page ) { #>
+				<# if ( ( page === (pagination.current_page - pagination.near ) ) && ( ( pagination.pages[pagination.current_page - pagination.near - 1 ] !== pagination.current_page - pagination.near - 1 ) && ( pagination.current_page - pagination.near - 1 > 1 ) ) ) { #>
+					<a href="javascript:void(0)" class="tva-pg-element tva-dots tva-pg-disabled">....</a>
+				<# } #>
+
+				<a href="javascript:void(0)" class="tva-pg-element tva-pg-item <#= pagination.current_page === page ? 'tva-current-page tva-pg-disabled' : '' #>" data-page="<#= page #>"><#= page #></a>
+
+			<# if ( ( page === (pagination.current_page + pagination.near ) ) && ( ( pagination.pages[pagination.current_page + pagination.near + 1 ] !== pagination.current_page + pagination.near + 1 ) && ( pagination.current_page + pagination.near + 1 > 1 ) ) ) { #>
+				<a href="javascript:void(0)" class="tva-pg-element tva-dots tva-pg-disabled">&hellip;</a>
+				<# } #>
+			<# } ) #>
+
+			<a href="javascript:void(0)" class="tva-pg-element tva-pg-next <#= pagination.total_pages === pagination.current_page ? 'tva-pg-disabled' : ''#>">&raquo;</a>
+		</div>
+	</div>
+<# } else { #>
+	<p> <?php echo __( 'No customers found!', TVA_Const::T )?> </p>
+<# } #>
+
+</div>

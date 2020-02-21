@@ -1,0 +1,54 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-course-title-holder">
+	<h3 class="tvd-title tva-main-course-title">
+		<#= model.get('name') #>
+	</h3>
+	<span class="tva-edit-course-name"><?php tva_get_svg_icon( 'adm-edit-w-tar' ); ?></span>
+	<div class="tva-msg tva-hide">
+		<?php tva_get_svg_icon( 'exclamation-circle' ); ?>
+		<?php echo __( 'Changing the course title will also update the course URL', 'thrive-apprentice' ) ?>
+	</div>
+</div>
+
+<div class="ta-course-wrapper">
+	<div class="tva-top">
+		<div class="tva-course-section"></div>
+		<span class="tva-add-content <#= model.hasChildren() ? '' : 'tva-no-content' #>">
+			<span class="tva-status-tooltip"><?php echo __( 'Add New Content', TVA_Const::T ) ?></span>
+		</span>
+	</div>
+
+	<div class="tva-course-content">
+		<div class="tva-tabs">
+			<span class="tva-tab-item" data-tab="content">
+				<span class="tva-tab-icon"><?php tva_get_svg_icon( 'tabs-list' ); ?></span>
+				<span class="tva-tab-title"><#= contentTab #></span>
+			</span>
+			<span class="tva-tab-item" data-tab="details">
+				<span class="tva-tab-icon"><?php tva_get_svg_icon( 'info-circle' ); ?></span>
+				<span class="tva-tab-title"><?php echo __( 'Course Details', TVA_Const::T ) ?></span>
+			</span>
+			<span class="tva-tab-item" data-tab="restrictions">
+				<span class="tva-tab-icon"><?php tva_get_svg_icon( 'unlock-alt' ); ?></span>
+				<span class="tva-tab-title"><?php echo __( 'Access Restrictions', TVA_Const::T ) ?></span>
+			</span>
+		</div>
+	</div>
+
+	<div class="tva-active-tab-content"></div>
+</div>
+
+<div class="">
+	<a class="back-to-the-dashboard" href="#purge-cache">&lt;&nbsp;<?php echo __( 'Back to Dashboard', TVA_Const::T ) ?></a>
+</div>

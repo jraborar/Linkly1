@@ -1,0 +1,23 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+
+<div class="tva-course-structure-header">
+    <p><?php echo __( 'Reorder modules and chapters' ); ?></p>
+    <span><?php echo __( '(click & drag)' ); ?></span>
+	<span class="tva-hide-right-sidebar close"></span>
+
+    <# if ( is_empty ) { #>
+        <p class="no-modules-chapters"><?php echo __( 'You have no modules and/or chapters created yet. Once you have created some, you will be able to reorder them.' ) ?></p>
+        <button class="tva-sidebar-add-content"><?php echo __( 'Add Content' ) ?></button>
+    <# } #>
+</div>

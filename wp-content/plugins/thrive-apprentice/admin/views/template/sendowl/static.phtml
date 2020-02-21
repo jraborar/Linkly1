@@ -1,0 +1,30 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<input id="tva-sendowl-thankyou-page" placeholder="<?php echo __( 'Search page&hellip;', TVA_Const::T ) ?>" class="tvd-save tva-sendowl-input" type="text"
+       value="<#= model.get('name') #>" data-field="thankyou_page">
+<# if( model.get('tcb_edit_url') ) { #>
+<a href="<#= model.get('thankyou_tcb_edit_url')? model.get('thankyou_tcb_edit_url') : '' #>" target="_blank" class="tva-sendowl-button-simple">
+	<span><?php tva_get_svg_icon( 'pen' ); ?></span>
+	<?php echo __( 'Edit Page', TVA_Const::T ) ?>
+</a>
+<# } #>
+
+<span class="tva-sep"><?php echo __( 'or ', TVA_Const::T ) ?></span>
+<a href="javascript:void(0)" class="tva-sendowl-button tva-create-thankyou-page"><?php echo __( 'Create a new page', TVA_Const::T ) ?></a>
+
+<div id="tva-create-thankyou-page" style="display: none;">
+	<input id="tva-new-sendowl-thankyou-page" type="text" placeholder="<?php echo __( 'Page Title', TVA_Const::T ) ?>" class="tvd-save tva-sendowl-input"
+	       data-field="thankyou_new_page">
+
+	<a href="javascript:void(0)" class="tva-sendowl-button tva-create-thankyou-page-submit"><?php echo __( 'Create page', TVA_Const::T ) ?></a>
+</div>

@@ -1,0 +1,18 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-parent tva-selected-item tva-chapter-parent">
+    <span><#= model.get('post_title') ? model.get('post_title') : '<?php echo __( 'Select a chapter' )?>' #></span>
+</div>
+<div class="tva-chapters-container">
+    <ul class="tva-parents-list"></ul>
+</div>

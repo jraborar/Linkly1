@@ -1,0 +1,134 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div style="overflow: hidden;" class="tva-modal-step">
+	<div class="tvd-modal-content tva-customer-styling">
+		<div class="tva-add-single-customer"></div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content tva-customer-styling">
+
+		<h3 class="tvd-modal-title"><?php echo __( 'Bulk Customer Import', 'thrive-apprentice' ) ?></h3>
+
+		<p><?php echo __( 'Choose the import method', 'thrive-apprentice' ) ?>:</p>
+
+		<div class="tva-import-options">
+			<p class="tva-import-type" data-option="csvFile">
+				<?php tva_get_svg_icon( 'csv' ); ?>
+				<?php echo __( 'CSV File from SendOwl' ) ?>
+			</p>
+			<p class="tva-import-type" data-option="listNames">
+				<?php tva_get_svg_icon( 'clipboard-list' ); ?>
+				<?php echo __( 'List of names and emails' ) ?>
+			</p>
+		</div>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tva-modal-prev-step"><?php echo __( 'Back', 'thrive-apprentice' ) ?></button>
+			<button type="button" class="tva-modal-next-step tvd-right tva-toggle-disable tvd-disabled"><?php echo __( 'Continue', 'thrive-apprentice' ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content tva-customer-styling">
+		<div class="tva-import-container"></div>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class=" <#= prevent_back ? "tvd-modal-close" : "tva-modal-prev-step" #> "><#= prevent_back ? "<?php echo __( 'Close', 'thrive-apprentice' ) ?>" : "<?php echo __( 'Back', 'thrive-apprentice' ) ?>"#></button>
+			<button type="button" class="tva-modal-next-step tvd-right"><?php echo __( 'Add Customers', 'thrive-apprentice' ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content tva-customer-styling">
+
+		<h3> <?php echo __( 'Import Customer List from SendOwl' ) ?> </h3>
+
+		<div class="tva-customers-import-options">
+
+			<p><?php echo __( 'Validate your list and choose product access', 'thrive-apprentice' ) ?></p>
+
+			<div class="csv-titles">
+				<div class="">
+					<?php echo __( 'Customer Name', 'thrive-apprentice' ) ?>
+				</div>
+				<div class="">
+					<?php echo __( 'Email Address', 'thrive-apprentice' ) ?>
+				</div>
+			</div>
+			<div class="tva-csv-customers-list"></div>
+			<div class="tva-invalid-customers">
+				<p>
+					<?php echo __( 'It seems like you have entered some invalid customers (highlighted in red). Please go back and correct it. If you 
+choose to continue, the invalid customers won’t be imported.', 'thrive-apprentice' )?>
+				</p>
+			</div>
+
+			<p><?php echo __( 'Give users access to the following:', 'thrive-apprentice' ) ?></p>
+
+			<div class="tva-available-options">
+				<div class="tva-mr">
+					<p class="mb-small"><?php echo __( 'Products', 'thrive-apprentice' ) ?></p>
+
+					<div class="tva-modal-card tva-csv-sendowl-products"></div>
+				</div>
+
+				<div class="">
+					<p class="mb-small"><?php echo __( 'Bundles', 'thrive-apprentice' ) ?></p>
+
+					<div class="tva-modal-card tva-csv-sendowl-bundles"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tva-invalid-file">
+			<p><?php echo __( 'A problem has occurred while attempting to read the data in the file that you’ve uploaded.  This would usually occur if the file is corrupt or in the incorrect format.', 'thrive-apprentice' ) ?></p>
+			<p>
+				<?php
+				$link   = 'https://thrivethemes.com/tkb_item/where-to-find-the-list-of-customers-in-sendowl/';
+				$string = __( "Please make sure that you're downloading the right file from SendOwl (%s) and try again.", 'thrive-apprentice' );
+
+				echo sprintf( $string, '<a href="' . $link . '" target="_blank">' . __( 'see here for more information', 'thrive-apprentice' ) . '</a>' );
+				?>
+			</p>
+			<p>
+				<?php
+				echo __( 'Also make sure that <i>Buyer Email</i> and <i>Buyer Name</i> are correct. These fields are required in order to insert the customers.', 'thrive-apprentice' )
+				?>
+			</p>
+			<p>
+				<?php
+				$string = 'If you continue to experience this error, then please contact our %s team and we’ll identify the issue.';
+				$link   = 'https://thrivethemes.com/forums/';
+
+				echo sprintf( $string, '<a href="' . $link . '" target="_blank" >' . __( 'support', 'thrive-apprentice' ) . '</a>' );
+				?>
+			</p>
+		</div>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tva-modal-prev-step"><?php echo __( 'Back', 'thrive-apprentice' ) ?></button>
+			<button type="button" class="tva-import-customers tvd-right"><?php echo __( 'Save', 'thrive-apprentice' ) ?></button>
+		</div>
+
+	</div>
+</div>
+
+<style>
+	.tva-invalid-file, .tva-invalid-customers {
+		display: none;
+	}
+</style>

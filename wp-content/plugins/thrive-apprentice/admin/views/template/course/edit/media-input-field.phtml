@@ -1,0 +1,22 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tvd-input-field" style="<#= model.get('media_type') == 'custom' ? 'display: none' : '' #>">
+    <input id="tva-media-url" type="text" placeholder="Url" value="<#= this.model.get( 'media_url' ) #>" data-field="media_url">
+    <label for="tva-media-url" class="tva-custom-label"></label>
+</div>
+<div class="tva-course-video-custom" style="<#= model.get('media_type') == 'custom' ? '' : 'display: none' #>">
+    <div class="tvd-input-field">
+        <span class="tva-course-custom-embed"><?php echo __( 'Custom Embed Code', TVA_Const::T ) ?></span>
+        <textarea id="tva-course-custom" class="tvd-materialize-textarea" data-field="media_url"><#= this.model.get( 'media_url' ) #></textarea>
+        <label for="tva-course-custom"></label>
+    </div>
+</div>

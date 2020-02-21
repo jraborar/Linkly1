@@ -1,0 +1,270 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-sidebar-wrapper">
+
+	<div class="clearfix tva-sidebar-title">
+		<h1 class="tvd-title">
+			<span href="javascript:void(0)" class="tvd-pointer tvd-icon-collapsed tvd-left tva-go-back tva-arrow"></span>
+			<?php echo __( 'Template Settings', TVA_Const::T ) ?>
+		</h1>
+	</div>
+
+	<div class="clearfix tva-course-select">
+		<div class="tva-floating">
+			<a href="javascript:void(0)" class="tvd-btn tva-advanced-settings">
+				<?php echo __( 'Course Overview', TVA_Const::T ) ?>
+			</a>
+		</div>
+		<div class="tva-floating tvd-right">
+			<a href="javascript:void(0)" class="tvd-btn tvd-disabled">
+				<?php echo __( 'Course Layout', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+
+	<div class="tva-settings-holder" id="tva-advanced-settings">
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4 class="tva-course-list-title">
+					<?php echo __( 'Course Lessons', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lessons-text">
+							<?php echo __( 'Plural', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('lessons_plural_text') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('lessons_plural_text') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-lessons-text" name="course_lessons_plural" value="<#= template.course_lessons_plural #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4 class="tva-course-list-title">
+					<?php echo __( 'Button Labels', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-more-details">
+							<?php echo __( 'Details', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('details') ? 'tvd-tooltipped' : 'tvd-tooltipped'#>"
+						<#= this.model.get('preview_option') && !available_settings.get('details') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-more-details" name="course_more_details" value="<#= template.course_more_details #>" data-tooltip="Applies for Text &
+						Video Courses"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-more-read">
+							<?php echo __( 'Read', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('read') ? 'tvd-tooltipped' : 'tvd-tooltipped'#>"
+						<#= this.model.get('preview_option') && !available_settings.get('read') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-more-read" name="course_more_read" value="<#= template.course_more_read #>" data-tooltip="Applies for Guides"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4 class="tva-course-list-title">
+					<?php echo __( 'Course Type Labels', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-guide">
+							<?php echo __( 'Guide', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('guide') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('guide') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-type-guide" name="course_type_guide" value="<#= template.course_type_guide #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-text">
+							<?php echo __( 'Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('text') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('text') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-type-text" name="course_type_text" value="<#= template.course_type_text #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-audio">
+							<?php echo __( 'Audio', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('audio') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('audio') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-type-audio" name="course_type_audio" value="<#= template.course_type_audio #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-video">
+							<?php echo __( 'Video', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change  <#= this.model.get('preview_option') && !available_settings.get('video') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('video') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-type-video" name="course_type_video" value="<#= template.course_type_video #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-audio-text-mix">
+							<?php echo __( 'Audio/Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('audio_text_mix') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('audio_text_mix') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-course-type-audio-text-mix" name="course_type_audio_text_mix" value="<#= template.course_type_audio_text_mix #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-video-text-mix">
+							<?php echo __( 'Video/Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('video_text_mix') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('video_text_mix') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-course-type-video-text-mix" name="course_type_video_text_mix" value="<#= template.course_type_video_text_mix #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-video-audio-mix">
+							<?php echo __( 'Video/Audio', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('video_audio_mix') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('video_audio_mix') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-course-type-video-audio-mix" name="course_type_video_audio_mix" value="<#= template.course_type_video_audio_mix #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-type-big-mix">
+							<?php echo __( 'Video/Audio/Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('big_mix') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('big_mix') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-course-type-big-mix" name="course_type_big_mix" value="<#= template.course_type_big_mix #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Progress Bar', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-progress-bar-text">
+							<?php echo __( 'Progress label', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('progress') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('progress') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-progress-bar-text" name="progress_bar" value="<#= template.progress_bar #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-progress-bar-text">
+							<?php echo __( 'Progress not started', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-progress-bar-text-not-started" name="progress_bar_not_started"
+						       value="<#= template.progress_bar_not_started #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-progress-bar-finished-text">
+							<?php echo __( 'Progress finished', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('finished') ? 'tvd-tooltipped' : ''#>" <#=
+						this.model.get('preview_option') && !available_settings.get('finished') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-progress-bar-finished-text" name="progress_bar_finished" value="<#= template.progress_bar_finished #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Search Label', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-progress-bar-text">
+							<?php echo __( 'Search', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-attr-change" id="tva-search-text" name="search_text" value="<#= template.search_text #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="clearfix tva-options-action">
+		<div class="tvd-col tvd-6">
+			<div class="tvd-input-field">
+				<a href="javascript:void(0)"
+				   class="tvd-waves-effect tvd-waves-light tvd-btn tvd-btn-gray tvd-left tva-close"><?php echo __( 'Close', TVA_Const::T ) ?></a>
+			</div>
+		</div>
+
+		<div class="tvd-col tvd-6">
+			<div class="tvd-input-field">
+				<a href="javascript:void(0)"
+				   class="tvd-btn tvd-btn-green tvd-waves-light tvd-right save-template"> <?php echo __( 'Save', TVA_Const::T ) ?> </a>
+			</div>
+		</div>
+	</div>
+
+</div>

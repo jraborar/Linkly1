@@ -1,0 +1,71 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="<#= model.get('post_status') == 'publish' ? 'tva-white' : 'tva-gray' #>" id="tva-lesson-<#= model.get('ID') #>">
+	<div class="tva-lesson-controls">
+		<span class="tva-drag-card tva-drag-lesson">
+			<span class="tva-status-tooltip"><?php echo __( 'Change the lesson order', TVA_Const::T ) ?></span>
+			<?php tva_get_svg_icon( 'adm-lesson-move' ); ?>
+		</span>
+	</div>
+
+	<div class="tva-lesson-name">
+		<div class="tva-checkbox">
+			<input data-id="<#= model.get('ID') #>" class="tva-select-items" <#= model.get('checked') ? 'checked' : '' #> type="checkbox"
+			id="tva-select-item-<#= model.get('ID') #>"/>
+			<label for="tva-select-item-<#= model.get('ID') #>"></label>
+		</div>
+		<div class="tva-title-container">
+			<p class="tva-lesson-title">
+				<#= model.get('post_title') #>
+				<#= ThriveApp.TVA_DEBUG ? model.get('ID') : '' #>
+				<#= ThriveApp.TVA_DEBUG ? model.get('tva_lesson_order') : '' #>
+			</p>
+			<p class="tva-lesson-subtitle"><#= model.get('types')[model.get('lesson_type')].label #></p>
+			<span class="tva-edit-lesson-name"><?php tva_get_svg_icon( 'adm-edit-w-tar' ); ?></span>
+		</div>
+
+		<span class="tva-lesson-status"><#= model.get('post_status') == 'draft' ? '<?php echo __( 'Draft', TVA_Const::T ); ?>' : '<?php echo __( 'Published', TVA_Const::T ); ?>'  #></span>
+		<span class="tva-lesson-type"><#= ThriveApp.util.upperFirst(model.get('lesson_type')) #></span>
+	</div>
+
+	<div class="tva-lesson-edit">
+		<a data-id="<#= model.get('ID') #>" class="tva-edit-lesson tvd-pointer" href="javascript:void(0)">
+			<?php echo tva_get_svg_icon( 'edit-summary' ); ?>
+			<?php echo __( 'Edit Summary', TVA_Const::T ) ?>
+		</a>
+		<a class="tva-tcb-lesson" target="_blank" href="<#= model.get('tcb_edit_url') #>">
+			<span><?php tva_get_svg_icon( 'tar' ); ?></span>
+			<span class="tva-edit-option tva-tcb-add-content"><?php echo __( 'Add Content', TVA_Const::T ) ?></span>
+			<span class="tva-edit-option tva-hide"><?php echo __( 'Edit Content', TVA_Const::T ) ?></span>
+		</a>
+		<span class="tva-publish-lesson tvd-pointer <# if ( model.get( 'post_status' ) == 'publish' ) { #> tva-unpublish-lesson <# } #>">
+			<# if(model.get('post_status') == 'draft') { #>
+				<span><?php echo tva_get_svg_icon( 'adm-post-draft' ); ?></span>
+			<# } else { #>
+				<span><?php echo tva_get_svg_icon( 'adm-post-not-draft' ); ?></span>
+			<# } #>
+
+			<#= model.get('post_status') == 'draft' ? '<?php echo __( 'Publish Lesson', TVA_Const::T ); ?>' : '<?php echo __( 'Unpublish Lesson', TVA_Const::T ); ?>'  #>
+		</span>
+
+		<div class="tva-more-options-trigger">
+			<span><?php tva_get_svg_icon( 'adm-lesson-dots' ); ?></span>
+			<ul class="tva-more-options">
+				<li><a class="tvd-pointer" target="_blank"
+				       href="<#= model.get('guid') + '&preview=true' #>"><?php echo __( 'Preview Lesson', TVA_Const::T ) ?></a></li>
+				<li><a class="tva-delete-lesson tvd-pointer"><?php echo __( 'Delete Lesson', TVA_Const::T ) ?></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

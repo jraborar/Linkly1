@@ -1,0 +1,18 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-list tva-sendowl-list tva-sendowl-<#= type #>-list">
+	<div class="tva-sendowl-<#= type #>"></div>
+	<a href="javascript:void(0)" class="tva-refresh-items tva-sendowl-button" data-type="<#= type #>">
+		<#= 'Refresh ' + ThriveApp.util.upperFirst( type ) + ' List' #>
+	</a>
+</div>

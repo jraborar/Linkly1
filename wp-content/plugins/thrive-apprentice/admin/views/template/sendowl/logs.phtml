@@ -1,0 +1,29 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3><?php echo __( 'SendOwl Logs', TVA_Const::T ) ?></h3>
+
+<div class="tvd-row" id="tve-debug-log-types">
+	<div class="tvd-col tvd-s3 tvd-offset-s7 tvd-right-align">
+		<input type="text" class="tve-debug-search"
+			   placeholder="Search <#= Backbone.history.getFragment().indexOf( 'sendowl_stacks' ) !== - 1 ? 'Stacks' : 'Logs' #>"/>
+	</div>
+	<div class="tvd-col tvd-s2 tvd-right-align">
+		<a class="tva-sendowl-button <#=  Backbone.history.getFragment().indexOf( 'sendowl_stacks' ) !== - 1 ? 'tvd-disabled tvs-debug-disabled' : '' #>"
+		   href="#sendowl_stacks"><?php echo __( 'Stacks', TVA_Const::T ) ?></a>
+		<a class="tva-sendowl-button <#=  Backbone.history.getFragment().indexOf( 'sendowl_stacks' ) === - 1 ? 'tvd-disabled' : '' #>"
+		   href="#sendowl_logs"><?php echo __( 'Logs', TVA_Const::T ) ?></a>
+	</div>
+
+</div>
+<div class="tvd-row" id="tve-debug-type-filters"></div>
+<div class="tvd-row" id="tve-debug-tables-wrapper"></div>

@@ -1,0 +1,22 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<span class="tva-subtitle">
+	<?php _e( 'Would you like to add a custom module cover image?', TVA_Const::T ) ?>
+</span>
+
+<div class="tva-main-cover-style">
+	<div class="tva-main-cover-style-w-img">
+		<div style='width: 100%; background-image:url("<#= model.get('cover_image') #>");' class="tva-course-image-holder">
+		<span class="tva-remove-module-cover-image"><?php echo __( 'Remove Image', TVA_Const::T ) ?></span>
+	</div>
+</div>

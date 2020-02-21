@@ -1,0 +1,40 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-apprentice
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="ttw-header-top-margin"><?php echo __( 'What page is your Thank you Page? ', TVA_Const::T ) ?></h3>
+
+<p class="sendowl-p"><?php echo __( 'This is the page a customer will see after paying for your SendOwl product if you do not override this setting on product level. ', TVA_Const::T ) ?></p>
+
+<p class="sendowl-p">
+	<a href="//fast.wistia.net/embed/iframe/x10zi7pmr5?popover=true" class="wistia-popover[height=450,playerColor=2bb914,width=800]">
+		<?php echo __( 'Click here to learn more about Thank you pages in SendOwl.', TVA_Const::T ) ?>
+	</a>
+</p>
+
+<div class="tva-checkout-div">
+	<input id="tva-sendowl-thankyou-page" placeholder="<?php echo __( 'Search page&hellip;', TVA_Const::T ) ?>" class="tvd-save tva-sendowl-input"
+	       type="text" value="<#= model.get('thankyou_page').name #>" data-field="thankyou_page">
+
+	<a href="<#= model.get('thankyou_tcb_edit_url') #>" target="_blank" class="tva-sendowl-button-simple">
+		<span><?php tva_get_svg_icon( 'pen' ); ?></span>
+		<?php echo __( 'Edit Page', TVA_Const::T ) ?>
+	</a>
+</div>
+
+<span class="tva-sep"><?php echo __( 'or ', TVA_Const::T ) ?></span>
+<a href="javascript:void(0)" class="tva-sendowl-button tva-create-thankyou-page"><?php echo __( 'Create a new page', TVA_Const::T ) ?></a>
+
+<div id="tva-create-thankyou-page" style="display: none;">
+	<input id="tva-new-sendowl-thankyou-page" type="text" placeholder="<?php echo __( 'Page Title', TVA_Const::T ) ?>" class="tvd-save tva-sendowl-input"
+	       data-field="thankyou_new_page">
+	<a href="javascript:void(0)" class="tva-sendowl-button tva-create-thankyou-page-submit"><?php echo __( 'Create page', TVA_Const::T ) ?></a>
+</div>

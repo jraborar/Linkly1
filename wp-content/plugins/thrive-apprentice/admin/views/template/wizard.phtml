@@ -1,0 +1,33 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-preview-switch">
+	<div class="tva-preview-container">
+        <# if ( published.length > 0 ) { #>
+            <div class="tva-switch <#= model.get('preview_option') ? 'tva-mock-up tvd-pointer' : '' #>">
+                <span><?php echo __( 'Demo', TVA_Const::T ) ?></span>
+            </div>
+            <div class="tva-switch <#= ! model.get('preview_option') ? 'tva-live tvd-pointer' : 'tva-disabled tva-no-frame' #>">
+                <span><?php echo __( 'Live', TVA_Const::T ) ?></span>
+            </div>
+        <# } #>
+	</div>
+</div>
+
+<div class="tva-options-container" id="tva-options-container">
+
+</div>
+<div class="tva-template-container">
+
+</div>
+
+

@@ -1,0 +1,27 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<p> <?php echo __( 'Would you like to generate a purchase link for a product or a bundle?', TVA_Const::T ) ?> </p>
+
+<div class="tva-options">
+
+	<div class="tva-option tva-product" data-type="product">
+		<?php tva_get_svg_icon( 'so-products' ); ?>
+		<p><?php echo __( 'Product', TVA_Const::T ) ?></p>
+	</div>
+
+	<div class="tva-option tva-product" data-type="bundle">
+		<?php tva_get_svg_icon( 'so-bundle' ); ?>
+		<p><?php echo __( 'Bundle', TVA_Const::T ) ?></p>
+	</div>
+
+</div>

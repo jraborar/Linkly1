@@ -1,0 +1,19 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<span class="tva-material-label">
+	<?php echo __( 'Difficulty Level', TVA_Const::T ) ?>
+</span>
+<a href="javascript:void(0)" class="tva-expand-levels">
+	<span class="tva-course-level-value"><#= model.get('level_name') #></span>
+	<i class="ta-caret tvd-right"></i>
+</a>

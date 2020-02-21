@@ -1,0 +1,25 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="">
+	<div class="tva-customer-logo">
+		<span style="background-image: url(<#= model.get( 'avatar_url' ) #>)" class="customer-img"></span>
+		<span><#= model.get( 'display_name' ) #></span>
+	</div>
+	<div class="tva-customer-name">
+		<span><#= model.get( 'user_email' ) #></span>
+	</div>
+	<div class="tva-customer-options">
+		<?php tva_get_svg_icon( 'lock' ); ?><a href="javascript:void(0)" class="tva-customer-option tva-edit-customer" data-customer-id="<#= model.get( 'ID' )#>"><?php echo __( 'Edit Access Rights', TVA_Const::T ) ?></a>
+		<?php tva_get_svg_icon( 'user' ); ?><a href="<#= model.get( 'edit_url' )#>" target="_blank" class="tva-customer-option tva-view-customer-profile"><?php echo __( 'View Wordpress User', TVA_Const::T ) ?></a>
+	</div>
+</div>

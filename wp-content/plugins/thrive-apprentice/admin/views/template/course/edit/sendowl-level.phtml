@@ -1,0 +1,18 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="clearfix">
+	<input class="tva-membership-change" id="tva-<#= tag #>-level-<#= model.get('id') #>" type="checkbox" value="<#= model.get('id') #>" <#= checked && checked.length > 0 && checked.indexOf(model.get('id')) !== -1 ? 'checked="checked"' : '' #> />
+	<label for="tva-<#= tag #>-level-<#= model.get('id') #>">
+		<#= model.get('name') #>
+	</label>
+</div>

@@ -1,0 +1,44 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-card tvd-xsmall">
+	<div class="tvd-card-content">
+		<div class="tvd-row">
+			<div class="tvd-col tvd-s6 tva-item-name">
+				<input data-id="<#= model.get('ID') #>" class="tva-select-items" type="checkbox" id="tva-select-item-<#= model.get('ID') #>"/>
+				<label for="tva-select-item-<#= model.get('ID') #>"></label>
+				<div class="tva-title-container">
+					<p class="tvd-left tva-item-title tvd-truncate"><#= model.get('post_title') #></p>
+					<span class="tvd-icon-pencil tvd-pointer tvd-left tva-edit-item-name"></span>
+				</div>
+			</div>
+			<div class="tvd-col tvd-s5 tva-item-edit">
+                <# if ( model.get( 'post_type' ) === 'tva_module' ) { #>
+                    <a href="javascript:void(0)" class="tvd-btn tvd-btn-blue tvd-waves-light tva-add-item-content">
+                        Add Content
+                    </a>
+                <# } #>
+                <a href="javascript:void(0)" class="tvd-btn tvd-btn-blue tvd-waves-light tva-edit-item">
+					<#= model.get('edit_text') #>
+				</a>
+                <# if ( model.get( 'post_type' ) === 'tva_module' ) { #>
+                    <a href="javascript:void(0)" class="tvd-btn tvd-btn-blue tvd-waves-light tva-publish-item">
+                        <span class="tva-item-status"><#= model.get('post_status') == 'draft' ? '<?php echo __( 'Publish', TVA_Const::T ); ?>' : '<?php echo __( 'Unpublish', TVA_Const::T ); ?>'  #></span>
+                    </a>
+                <# } #>
+			</div>
+		</div>
+        <div class="tvd-row">
+            <div class="tva-item-content"></div>
+        </div>
+	</div>
+</div>

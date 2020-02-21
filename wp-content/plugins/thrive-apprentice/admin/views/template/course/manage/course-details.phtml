@@ -1,0 +1,61 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-some-styling-hook">
+	<div class="tva-course-title">
+		<div class="tva-course-topic">
+			<div class="tva-pre-holder" style="background-color: <#= model.get('topic_color') #>"></div>
+			<p class="tva-lesson-detail">
+				<#= model.get('topic_name') #>
+			</p>
+			<p class="tva-lesson-info">
+				<?php echo __( 'Topic', TVA_Const::T ) ?>
+			</p>
+		</div>
+		<div class="tva-course-author" id="tva-course-author">
+			<div class="tva-pre-holder">
+				<div class="tva-avatar-icon" style='background-image: url("<#= author.get('url') #>")'></div>
+			</div>
+			<p class="tva-course-author-title">
+				<#= author.get('user_login') #>
+			</p>
+			<p class="tva-lesson-info">
+				<?php echo __( 'Author', TVA_Const::T ) ?>
+			</p>
+
+			<div class="tvd-input-field tva-search-author tva-hide">
+				<input id="tva-search-users" type="text" placeholder="Search users" data-field="author">
+			</div>
+		</div>
+		<div class="tva-course-difficulty">
+			<p class="tva-lesson-detail">
+				<#= model.get('level_name') #>
+			</p>
+			<p class="tva-lesson-info">
+				<?php echo __( 'Difficulty', TVA_Const::T ) ?>
+			</p>
+		</div>
+
+
+		<div class="tva-course-actions">
+            <a target="_blank" href="<#= model.get('url') #><#= model.get('url').indexOf('?') != -1  ? '&' : '?' #>preview=true" class="tva-preview-course">
+				<?php echo __( 'Preview Course', TVA_Const::T ) ?>
+			</a>
+			<a href="javascript:void(0)" class="tva-publish-course <#= model.get( 'status' ) === 'publish' ? 'tva-unpublish' : '' #> <#= can_publish ? '' : 'tva-disabled tva-disable-publish' #> ">
+				<#=  model.get('status') == 'draft' ? 'Publish' : 'Unpublish' #>
+			</a>
+		</div>
+	</div>
+	<div class="tva-lesson-description">
+		<#= model.get('description') #>
+	</div>
+</div>

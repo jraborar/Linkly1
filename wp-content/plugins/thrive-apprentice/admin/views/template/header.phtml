@@ -1,0 +1,94 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-header">
+	<nav id="tvd-nav">
+		<div class="nav-wrapper">
+			<div class="tve-logo tvd-left">
+				<a href="<?php menu_page_url( 'tva_dashboard' ); ?>"
+				   class="tvd-users-dashboard-logo"
+				   title="<?php echo __( 'Thrive Apprentice Dashboard', TVA_Const::T ) ?>">
+					<span class="tvd-logo-container">
+						<img class="thrive_apprentice_logo" src="<?php echo TVA_Const::plugin_url( '/admin/img/TApp-homepage-logo.png' ) ?>" alt="">
+					</span>
+				</a>
+			</div>
+			<ul class="tvd-right">
+				<li>
+					<a id="tva-preview-index" target="_blank" href="<#= model.get('apprentice_url') #>">
+						<?php tva_get_svg_icon( 'prev-index' ); ?>
+						<?php echo __( 'Preview Index', TVA_Const::T ) ?>
+					</a>
+				</li>
+				<li>
+					<a id="tva-topic-settings" href="#topics">
+						<?php tva_get_svg_icon( 'c-topic' ); ?>
+						<?php echo __( 'Course Topics', TVA_Const::T ) ?>
+					</a>
+				</li>
+				<li class="tva-settings-dropdown">
+					<a id="tva-settings" href="javascript:void(0)" class="tvd-dropdown-button" data-activates="tva-submenu" data-beloworigin="true" data-hover="false" data-constrainwidth="false">
+						<?php tva_get_svg_icon( 'cogs' ); ?>
+						<?php echo __( 'Settings', TVA_Const::T ) ?>
+						<i class="tvd-icon-expanded tvd-no-margin-right"></i>
+					</a>
+				</li>
+				<li>
+					<a id="tvd-share-modal" class="tvd-modal-trigger" href="#tvd-modal1"
+					   data-overlay_class="tvd-white-bg" data-opacity=".95">
+						<span class="tvd-icon-heart"></span>
+					</a>
+				</li>
+			</ul>
+			<ul id="tva-submenu" class="tvd-dropdown-content">
+				<li>
+					<a id="tva-template-settings" href="javascript:void(0)">
+						<?php echo __( 'Template Settings', TVA_Const::T ) ?>
+					</a>
+				</li>
+				<li>
+					<a id="tva-general-settings" href="javascript:void(0)">
+						<?php echo __( 'General Settings', TVA_Const::T ) ?>
+					</a>
+				</li>
+				<# if ( model.get( 'apprentice' ) && model.get( 'is_thrivetheme' ) ) { #>
+					<# if( model.get('has_importcourses') ) { #>
+						<li>
+							<a id="tva-import-lessons" href="#import">
+								<?php echo __( 'Import', TVA_Const::T ) ?>
+							</a>
+						</li>
+					<# } #>
+					<li>
+						<a id="tva-disable-apprentice" href="javascript:void(0)">
+							<?php echo __( 'Turn Off Old Apprentice', TVA_Const::T ) ?>
+						</a>
+					</li>
+				<# } #>
+				<li>
+					<a id="tva-label-management" href="javascript:void(0)">
+						<?php echo __( 'Label management', TVA_Const::T ) ?>
+					</a>
+				</li>
+				<?php if(TVA_SendOwl::is_connected()) : ?>
+				<li>
+					<a id="tva-sendowl-settings" href="#sendowl_settings">
+						<?php echo __( 'SendOwl Settings', TVA_Const::T ) ?>
+					</a>
+				</li>
+				<?php endif; ?>
+			</ul>
+		</div>
+	</nav>
+	<?php include TVE_DASH_PATH . '/templates/share.phtml'; ?>
+</div>
+

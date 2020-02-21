@@ -1,0 +1,501 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tva-sidebar-wrapper">
+
+	<div class="clearfix tva-sidebar-title">
+
+		<h1 class="tvd-title">
+			<span href="javascript:void(0)" class="tvd-pointer tvd-left tvd-icon-collapsed tva-go-back"></span>
+			<?php echo __( 'Template Settings', TVA_Const::T ) ?>
+		</h1>
+	</div>
+
+	<div class="clearfix tva-course-select">
+		<div class="tva-floating">
+			<a href="javascript:void(0)" class="tvd-btn tvd-disabled">
+				<?php echo __( 'Course Overview', TVA_Const::T ) ?>
+			</a>
+		</div>
+		<div class="tva-floating">
+			<a href="javascript:void(0)" class="tvd-btn tva-apprentice-template">
+				<?php echo __( 'Course Layout', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+
+	<div class="tva-settings-holder" id="tva-advanced-settings">
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Course Name', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tva-range-field">
+						<div class="tvd-input-field range-field">
+							<label for="tva_course_title">
+								<?php echo __( 'Font Size', TVA_Const::T ) ?>
+							</label>
+							<input type="range" class="tva-no-ui-slider" id="tva_course_title" name="course_title" value="<#= template.course_title #>" min="10"
+							       max="100"/>
+						</div>
+					</div>
+					<div class="tva-number-field">
+						<div class="tvd-input-field">
+							<label for="tva_course_title_input">
+								<?php echo __( 'px', TVA_Const::T ) ?>
+							</label>
+							<input type="number" class="tva-slider-input" id="tva_course_title_input" name="course_title" value="<#= template.course_title #>"/>
+						</div>
+					</div>
+				</div>
+				<div class="tva-clear clearfix tva-color-picker">
+					<div class="tvd-input-field">
+						<label for="tva-course-title-color" class="tva-color-label">
+							<?php echo __( 'Color', TVA_Const::T ) ?>
+						</label>
+						<input id="tva-course-title-color" type="text" name="course_title_color" value="<#= template.course_title_color #>"
+						       class="tva-paragraph-color tva_color_input_change"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Description Title', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-page-headline-text">
+							<?php echo __( 'Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-page-headline-text" name="page_headline_text"
+						       value="<#= template.page_headline_text #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tva-range-field">
+						<div class="tvd-input-field range-field">
+							<label for="tva_page_headline">
+								<?php echo __( 'Font Size', TVA_Const::T ) ?>
+							</label>
+							<input type="range" class="tva-no-ui-slider" id="tva_page_headline" name="page_headline" value="<#= template.page_headline #>"
+							       min="10" max="100"/>
+						</div>
+					</div>
+					<div class="tva-number-field">
+						<div class="tvd-input-field">
+							<label for="tva_page_headline_input">
+								<?php echo __( 'px', TVA_Const::T ) ?>
+							</label>
+							<input type="number" class="tva-slider-input" id="tva_page_headline_input" name="page_headline"
+							       value="<#= template.page_headline #>"/>
+						</div>
+					</div>
+				</div>
+				<div class="tva-clear clearfix tva-color-picker">
+					<div class="tvd-input-field">
+						<label for="tva-headline-color" class="tva-color-label">
+							<?php echo __( 'Color', TVA_Const::T ) ?>
+						</label>
+						<input id="tva-headline-color" type="text" value="<#= template.page_headline_color #>" name="page_headline_color"
+						       class="tva-headline-color tva-paragraph-color tva_color_input_change"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Paragraphs', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tva-range-field">
+						<div class="tvd-input-field range-field">
+							<label for="tva_paragraph">
+								<?php echo __( 'Font Size', TVA_Const::T ) ?>
+							</label>
+							<input type="range" class="tva-no-ui-slider" id="tva_paragraph" name="paragraph" value="<#= template.paragraph #>" min="10"
+							       max="100"/>
+						</div>
+					</div>
+					<div class="tva-number-field">
+						<div class="tvd-input-field">
+							<label for="tva_paragraph_input">
+								<?php echo __( 'px', TVA_Const::T ) ?>
+							</label>
+							<input type="number" class="tva-slider-input" id="tva_paragraph_input" name="paragraph" value="<#= template.paragraph #>"/>
+						</div>
+					</div>
+				</div>
+				<div class="tva-clear clearfix tva-color-picker">
+					<div class="tvd-input-field">
+						<label for="tva-paragraph-color" class="tva-color-label">
+							<?php echo __( 'Color', TVA_Const::T ) ?>
+						</label>
+						<input id="tva-paragraph-color" type="text" name="paragraph_color" value="<#= template.paragraph_color #>"
+						       class="tva-paragraph-color tva_color_input_change"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Start Button', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-start-course-text">
+							<?php echo __( 'Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-start-course-text" name="start_course" value="<#= template.start_course #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Course Structure', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-course-structure-text">
+							<?php echo __( 'Text', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-course-structure-text" name="course_structure"
+						       value="<#= template.course_structure #>"/>
+					</div>
+					<div class="tvd-input-field">
+						<input type="checkbox" class="tva-checkbox" id="tva-collapse-modules" name="collapse_modules"
+						<#= template.collapse_modules ? 'checked="checked"' : '' #>>
+						<label class="tva-checkbox-label" for="tva-collapse-modules"><?php echo __( 'Collapse Modules', 'thrive-apprentice' ) ?></label>
+					</div>
+					<div class="tvd-input-field">
+						<input type="checkbox" class="tva-checkbox" id="tva-collapse-chapters" name="collapse_chapters"
+						<#= template.collapse_chapters ? 'checked="checked"' : '' #>>
+						<label class="tva-checkbox-label" for="tva-collapse-chapters"><?php echo __( 'Collapse Chapters', 'thrive-apprentice' ) ?></label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Title Size', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix <#= this.model.get('preview_option') && !available_settings.get('module_headline') ? 'tva-row-disabled' : ''#>">
+					<div class="tva-range-field">
+						<div class="tvd-input-field range-field">
+							<label for="tva_module_headline">
+								<?php echo __( 'Module Font Size', TVA_Const::T ) ?>
+							</label>
+							<input type="range" class="tva-no-ui-slider" id="tva_module_headline" name="module_headline" value="<#= template.module_headline #>"
+							       min="10" max="100"/>
+						</div>
+					</div>
+					<div class="tva-number-field">
+						<div class="tvd-input-field">
+							<label for="tva_module_headline_input">
+								<?php echo __( 'px', TVA_Const::T ) ?>
+							</label>
+							<input type="number" class="tva-slider-input" id="tva_module_headline_input" name="module_headline"
+							       value="<#= template.module_headline #>"/>
+						</div>
+					</div>
+				</div>
+				<div class="tva-clear clearfix <#= this.model.get('preview_option') && !available_settings.get('chapter_headline') ? 'tva-row-disabled' : ''#>">
+					<div class="tva-range-field">
+						<div class="tvd-input-field range-field">
+							<label for="tva_chapter_headline">
+								<?php echo __( 'Chapter Font Size', TVA_Const::T ) ?>
+							</label>
+							<input type="range" class="tva-no-ui-slider" id="tva_chapter_headline" name="chapter_headline"
+							       value="<#= template.chapter_headline #>" min="10" max="100"/>
+						</div>
+					</div>
+					<div class="tva-number-field">
+						<div class="tvd-input-field">
+							<label for="tva_chapter_headline_input">
+								<?php echo __( 'px', TVA_Const::T ) ?>
+							</label>
+							<input type="number" class="tva-slider-input" id="tva_chapter_headline_input" name="chapter_headline"
+							       value="<#= template.chapter_headline #>"/>
+						</div>
+					</div>
+				</div>
+				<div class="tva-clear clearfix <#= this.model.get('preview_option') && !available_settings.get('lesson_headline') ? 'tva-row-disabled' : ''#>">
+					<div class="tva-range-field">
+						<div class="tvd-input-field range-field">
+							<label for="tva_lesson_headline">
+								<?php echo __( 'Lesson Font Size', TVA_Const::T ) ?>
+							</label>
+							<input type="range" class="tva-no-ui-slider" id="tva_lesson_headline" name="lesson_headline" value="<#= template.lesson_headline #>"
+							       min="10" max="100"/>
+						</div>
+					</div>
+					<div class="tva-number-field">
+						<div class="tvd-input-field">
+							<label for="tva_lesson_headline_input">
+								<?php echo __( 'px', TVA_Const::T ) ?>
+							</label>
+							<input type="number" class="tva-slider-input" id="tva_lesson_headline_input" name="lesson_headline"
+							       value="<#= template.lesson_headline #>"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<# if(template.has_author) { #>
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Author', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-author-text">
+							<?php echo __( 'Label', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-author-text" name="author" value="<#= template.author #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<# } #>
+
+		<# if(template.has_lesson_list) { #>
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Lesson Overview', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-list-text">
+							<?php echo __( 'Title', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-lesson-list-text" name="lesson_list" value="<#= template.lesson_list #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-list-not-viewed-text">
+							<?php echo __( 'Not Viewed Label', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('not_viewed') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('not_viewed') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-lesson-list-not-viewed-text" name="lesson_list_not_viewed" value="<#= template.lesson_list_not_viewed #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-list-text">
+							<?php echo __( 'In Progress Label', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('lesson_progress') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('lesson_progress') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-lesson-list-progress-text" name="lesson_list_progress" value="<#= template.lesson_list_progress #>"/>
+					</div>
+				</div>
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-list-completed-text">
+							<?php echo __( 'Completed Label', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('completed') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('completed') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-lesson-list-completed-text" name="lesson_list_completed" value="<#= template.lesson_list_completed #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<# } #>
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Course Labels', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Lesson Singular', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('lesson_text') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('lesson_text') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-lesson-text" name="course_lesson" value="<#= template.course_lesson #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Lesson Plural', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('lessons_text') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('lessons_text') ? 'disabled ' + available_settings.get('tooltip') : ''#>
+						id="tva-lessons-text" name="course_lessons" value="<#= template.course_lessons #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Chapter Singular', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('course_chapter') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('course_chapter') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-chapter-text" name="course_chapter" value="<#= template.course_chapter #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Chapter Plural', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('course_chapters') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('course_chapters') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-chapters-text" name="course_chapters" value="<#= template.course_chapters #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Module Singular', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('course_module') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('course_module') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-module-text" name="course_module" value="<#= template.course_module #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Module Plural', TVA_Const::T ) ?>
+						</label>
+						<input type="text"
+						       class="tva-text-change <#= this.model.get('preview_option') && !available_settings.get('course_modules') ? 'tvd-tooltipped' : ''#>"
+						<#= this.model.get('preview_option') && !available_settings.get('course_modules') ? 'disabled ' + available_settings.get('tooltip') :
+						''#> id="tva-modules-text" name="course_modules" value="<#= template.course_modules #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix tva-card">
+			<div class="tva-card-title">
+				<h4>
+					<?php echo __( 'Lessons Labels', TVA_Const::T ) ?>
+				</h4>
+				<span class="tva-arrow"></span>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Next Lesson', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-lesson-next" name="next_lesson" value="<#= template.next_lesson #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'Previous Lesson', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-lesson-prev" name="prev_lesson" value="<#= template.prev_lesson #>"/>
+					</div>
+				</div>
+			</div>
+			<div class="tva-card-content">
+				<div class="tva-clear clearfix">
+					<div class="tvd-input-field">
+						<label for="tva-lesson-text">
+							<?php echo __( 'To Course Page', TVA_Const::T ) ?>
+						</label>
+						<input type="text" class="tva-text-change" id="tva-to-course-page" name="to_course_page" value="<#= template.to_course_page #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="clearfix tva-options-action">
+		<div class="tvd-col tvd-6">
+			<div class="tvd-input-field">
+				<a href="javascript:void(0)"
+				   class="tvd-waves-effect tvd-waves-light tvd-btn tvd-btn-gray tvd-left tva-close"><?php echo __( 'Close', TVA_Const::T ) ?></a>
+			</div>
+		</div>
+		<div class="tvd-col tvd-6">
+			<div class="tvd-input-field">
+				<a href="javascript:void(0)"
+				   class="tvd-btn tvd-btn-green tvd-waves-light tvd-right save-template"> <?php echo __( 'Save', TVA_Const::T ) ?> </a>
+			</div>
+		</div>
+	</div>
+
+</div>

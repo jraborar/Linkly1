@@ -1,0 +1,33 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package local.thrivethemes.com
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-white-text">
+	<div class="tvd-col tvd-s10">
+        <# if(model.get('type') === 'method') { #>
+            <strong><?php echo __('Method ->', TVA_Const::T);?> <#= model.get('data') #></strong>
+        <# } else { #>
+            <span>
+                <?php echo __('Type:', TVA_Const::T);?> <#= model.get('type') #>, <?php echo __('Identifier:', TVA_Const::T);?> <#= model.get('identifier') #> <?php echo __('Product:', TVA_Const::T);?> <#= model.get('product') #>
+
+            </span>
+        <# } #>
+	</div>
+	<div class="tvd-col tvd-s2">
+        <i class="tvd-right"><#= model.get('date') #>
+            <# if(model.get('type') !== 'method') { #>
+                <span class="tve-debug-icon tve-debug-slide">
+                    <span class="tve-churn-icon-keyboard_arrow_down"></span>
+                </span>
+            <# } #>
+        </i>
+    </div>
+</div>

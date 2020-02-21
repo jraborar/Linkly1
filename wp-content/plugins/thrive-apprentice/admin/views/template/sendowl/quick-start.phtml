@@ -1,0 +1,125 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tva-sendowl-settings"><?php echo __( 'Quick Start Guide', TVA_Const::T ) ?></h3>
+<div class="tva-guide-container">
+	<div class="tva-guide-item <#= true === step_1_completed ? 'tva-completed' : '' #>">
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image1.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>1.</span><?php _e( 'Create a Product in SendOwl', TVA_Const::T ) ?></h3>
+			<span class="tva-completed-step <#= true === step_1_completed ? '' : 'tva-hide' #>">
+				<?php echo __( 'Completed', TVA_Const::T ) ?>
+			</span>
+			<p>
+				<?php _e( 'Create the product your customers will buy in your SendOwl Account', TVA_Const::T ) ?>
+			</p>
+
+			<a href="#sendowl_add_product" class="tva-sendowl-button"><?php echo __( 'Create a Product in SendOwl', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+
+	<div class="tva-guide-item <#= model.get('checkout_page').ID && model.get('thankyou_page').ID ? 'tva-completed' : '' #>">
+
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image4.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>2.</span><?php _e( 'Complete your Checkout Settings', TVA_Const::T ) ?></h3>
+			<# if(model.get('checkout_page').ID && model.get('thankyou_page').ID) { #>
+			<span class="tva-completed-step"><?php echo __( 'Completed', TVA_Const::T ) ?></span>
+			<# } #>
+			<p>
+				<?php _e( 'Create the Checkout and the Thank You pages that your customers will be redirected to when making a purchase', TVA_Const::T ) ?>
+			</p>
+			<a href="<?php echo admin_url( 'admin.php?page=tva_dashboard#sendowl_checkout' ); ?>" target="_blank"
+			   class="tva-sendowl-button"><?php echo __( 'Checkout page settings', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+
+	<div class="tva-guide-item <#= model.get('checkout_page').ID ? 'tva-completed' : '' #>">
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image5.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>3.</span><?php _e( 'Create your Sales Page with Purchase Links', TVA_Const::T ) ?></h3>
+			<# if(model.get('checkout_page').ID) { #>
+			<span class="tva-completed-step"><?php echo __( 'Completed', TVA_Const::T ) ?></span>
+			<# } #>
+			<p>
+				<?php _e( 'Create sales pages where you can include purchase links for your courses', TVA_Const::T ) ?>
+			</p>
+			<a href="<?php echo admin_url( 'admin.php?page=tva_dashboard#sendowl_links' ); ?>" target="_blank"
+			   class="tva-sendowl-button"><?php echo __( 'Create your sales page', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+
+	<div class="tva-guide-item <#= ThriveApp.globals.settings.get('account_keys').secret ? 'tva-completed' : '' #>">
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image6.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>4.</span><?php _e( 'Set up your API Account Keys', TVA_Const::T ) ?></h3>
+			<# if(ThriveApp.globals.settings.get('account_keys').secret) { #>
+			<span class="tva-completed-step"><?php echo __( 'Completed', TVA_Const::T ) ?></span>
+			<# } #>
+			<p>
+				<?php _e( 'Make sure the incoming payments are registered and the orders you receive are valid.', TVA_Const::T ) ?>
+			</p>
+
+			<a href="<?php echo admin_url( 'admin.php?page=tva_dashboard#sendowl_integration' ); ?>" target="_blank"
+			   class="tva-sendowl-button"><?php echo __( 'Set up your API Account Keys', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+
+	<div class="tva-guide-item <#= ThriveApp.globals.courses.length > 0 ? 'tva-completed' : '' #>">
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>5.</span><?php _e( 'Build a Course in Thrive Apprentice', TVA_Const::T ) ?></h3>
+			<# if(ThriveApp.globals.courses.length > 0) { #>
+			<span class="tva-completed-step"><?php echo __( 'Completed', TVA_Const::T ) ?></span>
+			<# } #>
+			<p>
+				<?php _e( 'Create the course that you\'re going to sell in Thrive Apprentice', TVA_Const::T ) ?>
+			</p>
+
+			<a href="<?php echo admin_url( 'admin.php?page=tva_dashboard#add_course' ); ?>" target="_blank"
+			   class="tva-sendowl-button"><?php echo __( 'Learn how to create your first course', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+
+	<div class="tva-guide-item <#= access ? 'tva-completed' : '' #>">
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image3.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>6.</span><?php _e( 'Assign Access to your Course', TVA_Const::T ) ?></h3>
+			<# if(access) { #>
+			<span class="tva-completed-step"><?php echo __( 'Completed', TVA_Const::T ) ?></span>
+			<# } #>
+			<p>
+				<?php _e( 'Set up Thrive Apprentice so that your customers will get access to their course immediately after purchase', TVA_Const::T ) ?>
+			</p>
+
+			<a href="https://thrivethemes.com/tkb_item/how-to-assign-access-to-your-course-set-up-the-sendowl-protection-options/" target="_blank"
+			   class="tva-sendowl-button">
+				<?php echo __( 'How to Assign Access Rules', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+
+	<div class="tva-guide-item">
+		<div class="tva-sendowl-card-wide">
+			<div style="background-image: url('<?php echo TVA_Const::plugin_url( 'admin/img/lesson-image2.png' ); ?>')" class="tva-img-bg"></div>
+			<h3><span>7.</span><?php _e( 'Set up the SendOwl Listener', TVA_Const::T ) ?></h3>
+			<p>
+				<?php _e( 'Make sure that SendOwl and Thrive Apprentice can talk to eachother', TVA_Const::T ) ?>
+			</p>
+			<a href="<?php echo admin_url( 'admin.php?page=tva_dashboard#sendowl_integration' ); ?>" target="_blank"
+			   class="tva-sendowl-button"><?php echo __( 'Set up the Listener', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+
+</div>
+
+<a class="back-to-the-dashboard" href="#sendowl_settings">&lt;&nbsp;<?php echo __( 'Back to Settings', TVA_Const::T ) ?></a>

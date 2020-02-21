@@ -1,0 +1,35 @@
+<div class="tvd-modal-content tva-add-item-modal">
+	<div class="tva-text-item-container">
+
+        <div class="tvd-row tvd-collapse">
+            <div class="tvd-col tvd-s5">
+                <h3 class="tvd-modal-title"><#= model.get('head_title') #></h3>
+            </div>
+            <div class="tvd-col tvd-s5">
+                <div class="tva-chapter-dropdown"></div>
+            </div>
+        </div>
+		<div class="tvd-row tvd-collapse tva-add-item-no-margin">
+			<div class="tvd-col tvd-s12">
+				<div class="tvd-input-field">
+					<input id="tva-item-title" type="text" value="<#= model.get('post_title') #>" data-field="<#= model.get('data_field') #>">
+					<label for="tva-item-title"><?php echo __( 'Title', TVA_Const::T ) ?></label>
+				</div>
+			</div>
+		</div>
+		<div class="tvd-row tvd-collapse tva-add-item-no-margin">
+			<div class="tvd-col tvd-s12 tvd-m12">
+                <span class="tva-add-item-short-description"><?php echo __( 'Description', TVA_Const::T ) ?>
+                    <i class="tva-info-icon tvd-tooltipped"
+                       data-tooltip="<?php echo __( 'This will be displayed on the course overview page.', TVA_Const::T ) ?>">i
+                    </i>
+                </span>
+				<textarea id="tva-item-description"><#= model.get('post_excerpt') #></textarea>
+			</div>
+		</div>
+
+	</div>
+	<div class="tva-editor-extra-option"></div>
+	<div class="tvd-v-spacer"></div>
+	<div class="tvd-modal-footer"></div>
+</div>

@@ -1,0 +1,28 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-floating tva-topic-title-holder tva-title-container">
+	<span class="tva-label-title">
+		<#= item.get('title') #>
+	</span>
+	<span class="tvd-icon-pencil tvd-pointer tva-edit-label-name"></span>
+</div>
+
+<div class="tva-floating tva-topic-color-holder">
+	<input type="text" value="<#= item.get('color') #>" class="tva-label-color" />
+</div>
+
+<div class="tva-floating tva-topic-remove-holder">
+	<#= item.get('ID') > 0 ? '<a href="javascript:void(0)" class="tva-delete-label tvd-save" data-id="'+ item.get('ID') +'"> <i><?php tva_get_svg_icon( 'trash-alt' ); ?></i> </a>' : '' #>
+</div>
+
+

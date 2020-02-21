@@ -1,0 +1,13 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-apprentice
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<input type="text" value="<#= model.get('color') #>" class="tva-label-color-picker" />
+<span  data-id="<#= model.get('ID') #>" class="tva-course-label-name <#= model.get('ID') == selected ? 'tva-selected-level' : '' #>"><#= model.get('title') #></span>

@@ -1,0 +1,80 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-course-admin-section">
+	<div class="tvd-card-content">
+		<div class="tva-course-name">
+			<div class="tvd-input-field tva-course-title">
+				<input id="tva-course-title" type="text" value="<#= model.get('name') #>" data-field="course_name" size="">
+				<label for="tva-course-title"><?php echo __( 'Course Name', TVA_Const::T ) ?></label>
+			</div>
+			<?php $permalink_structure = get_option( 'permalink_structure' ) ?>
+			<?php if ( ! empty( $permalink_structure ) ) : ?>
+				<div class="tva-course-url">
+					<span><?php echo get_site_url() . '/' . tva_get_slug_for_courses() . '/' ?></span>
+					<div class="tvd-input-field tva-course-slug-holder">
+						<input id="tva-course-slug" type="text" value="<#= model.get('slug') #>" data-field="course_slug">
+						<div class="tva-copy-slug">
+							<input readonly="readonly" type="hidden"
+							       value="<?php echo get_site_url() . '/' . tva_get_slug_for_courses() . '/' ?><#= model.get('slug') #>"
+							       class="tva-sendowl-input tva-slug-url">
+							<button class="tva-sendowl-search tva-course-name-copy">
+								<span class="tva-status-tooltip"><?php echo __( 'Copy', TVA_Const::T ) ?></span>
+							</button>
+						</div>
+					</div>
+				</div>
+
+			<?php endif; ?>
+		</div>
+		<div class="tva-course-details">
+			<div class="tva-textarea-holder">
+				<span class="tva-subtitle"><?php echo __( 'Description', TVA_Const::T ) ?></span>
+				<div class="tva-textarea-container">
+					<textarea id="tva-course-description"><#= model.get('description') #></textarea>
+				</div>
+			</div>
+			<div class="tvd-pointer tva-cover-image"></div>
+		</div>
+		<div class="tva-course-video">
+			<div class="clearfix">
+				<label for="tva-course-featured-video"
+				       class="tva-general-setting-label"><?php echo __( 'Add video description', TVA_Const::T ) ?></label>
+				<div class="tvd-switch">
+					<label>
+						<input id="tva-course-featured-video" <#= model.get('video_status') ? 'checked="checked"' : '' #> type="checkbox">
+						<span class="tvd-lever"></span>
+					</label>
+				</div>
+			</div>
+			<p><?php echo __( 'The video will be added under the title of the course and it won’t replace the cover image. You can still add a course description along side the video.', TVA_Const::T ) ?></p>
+		</div>
+		<div style="display: none;" id="tva-course-video"></div>
+		<div class="tva-course-comments">
+			<label for="tva-course-comments"
+			       class="tva-general-setting-label"><?php echo __( 'Allow comments for this course', TVA_Const::T ) ?></label>
+			<div class="tvd-switch">
+				<label>
+					<input id="tva-course-comments" <#= model.get('comment_status') === 'open' ? 'checked="checked"' : '' #> type="checkbox">
+					<span class="tvd-lever"></span>
+				</label>
+			</div>
+		</div>
+		<div class="tva-toggle-container tva-author-biography"></div>
+
+		<div class="tva-add-course-actions">
+			<a href="javascript:void(0)" class="tvd-right tva-save-course">
+				<?php echo __( 'Save', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+</div>

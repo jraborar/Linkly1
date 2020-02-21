@@ -1,0 +1,43 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-so-products-urls tva-sendowl-products" id="so_product_urls">
+	<h1 class="tva-copy-purchase-links"><?php echo __( 'Copy your purchase links below', TVA_Const::T ) ?></h1>
+	<div class="tva-purchase-link">
+		<span class="url"><?php echo __( 'URL', TVA_Const::T ) ?></span>
+		<div class="tva-purchase-url">
+			<input readonly="readonly" type="text" value="<#= this.model.getPurchaseLink() #>" class="tva-sendowl-input tva-product-url" id="so_product_purchase_url">
+			<button class="tva-sendowl-search">
+				<span class="tva-status-tooltip"><?php echo __( 'Copy', TVA_Const::T ) ?></span>
+			</button>
+		</div>
+	</div>
+	<div>
+		<span class="shortcode"><?php echo __( 'Shortcode', TVA_Const::T ) ?></span>
+		<div class="tva-purchase-shortcode">
+			<input readonly="readonly" type="text" value="<#= this.model.getPurchaseShortcode() #>" class="tva-sendowl-input tva-product-url" id="so_product_purchase_shortcode">
+			<button class="tva-sendowl-search">
+				<span class="tva-status-tooltip"><?php echo __( 'Copy', TVA_Const::T ) ?></span>
+			</button>
+		</div>
+
+	</div>
+	<div>
+		<span class="html"><?php echo __( 'HTML', TVA_Const::T ) ?></span>
+		<div class="tva-purchase-html">
+			<input readonly="readonly" type="text" value='<#= this.model.getPurchaseHtml() #>' class="tva-product-html tva-sendowl-input" id="so_product_purchase_html">
+			<button class="tva-sendowl-search">
+				<span class="tva-status-tooltip"><?php echo __( 'Copy', TVA_Const::T ) ?></span>
+			</button>
+		</div>
+	</div>
+</div>

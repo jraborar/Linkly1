@@ -1,0 +1,56 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tva-sendowl-settings"><?php echo __( 'Integration Settings', TVA_Const::T ) ?></h3>
+
+<div class="tva-sendowl-integration-card">
+
+	<div class="tva-account-keys-holder"></div>
+
+	<h3 class="extra-top-space"><?php echo __( 'Webhooks', TVA_Const::T ) ?></h3>
+
+	<p class="sendowl-p">
+		<?php echo __( 'In your SendOwl account go to  ', TVA_Const::T ) ?><span><a
+					href="https://www.sendowl.com/settings/web_hooks"
+					target="_blank"><?php echo __( 'Settings / Advanced / Webhooks', TVA_Const::T ) ?></a></span>
+		<?php echo __( ' and create a new webhook.', TVA_Const::T ) ?>
+
+		<span class="text"><?php echo __( 'You’ll need to set up 4 different webhooks (Order Completed, Failed, Purchase and Refund) so Thrive Apprentice will know exactly what’s going on.', TVA_Const::T ) ?></span>
+		<span class="text">
+			<?php echo __( 'For each webhook you set up, copy the ', TVA_Const::T ) ?>
+			<strong><?php echo __( 'Listener URL ', TVA_Const::T ) ?></strong>
+			<?php echo __( 'below and paste it in the URL field.', TVA_Const::T ) ?>
+			<a href="//fast.wistia.net/embed/iframe/hf8g22k0ux?popover=true" class="wistia-popover[height=450,playerColor=2bb914,width=800]">
+				<?php echo __( 'Click here ', TVA_Const::T ) ?>
+			</a>
+			<?php echo __( 'for full video instructions.', TVA_Const::T ) ?>
+		</span>
+	</p>
+	<div class="tva-sendowl-integration-card">
+		<div class="tva-url">
+			<span class="url"><?php echo __( 'Listener URL', TVA_Const::T ) ?></span>
+		</div>
+		<div class="">
+			<div>
+				<input type="text" value="<?php echo TVA_Const::plugin_url( 'x.php' ) ?>" class="tva-sendowl-input">
+				<button class="tva-sendowl-search">
+					<span class="tva-status-tooltip"><?php echo __( 'Copy', TVA_Const::T ) ?></span>
+				</button>
+			</div>
+			<a target="_blank" href="https://thrivethemes.com/tkb_item/how-to-set-up-the-sendowl-listener/#listener" class="">
+				<?php echo __( 'How to set up the SendOwl Listener', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+</div>
+
+<a class="back-to-the-dashboard" href="#sendowl_settings">&lt;&nbsp;<?php echo __( 'Back to Settings', TVA_Const::T ) ?></a>

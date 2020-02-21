@@ -1,0 +1,107 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h1>
+	<?php echo __( 'Template Settings', TVA_Const::T ) ?>
+</h1>
+
+<div class="tva-settings-holder">
+	<div class="tva-input-holder">
+		<div class="tvd-input-field">
+			<select class="tva-fonts-source" id="tva-fonts-source">
+				<option
+				<#= model.get('template').font_source === 'safe' ? 'selected="selecter"' : '' #>
+				value="safe"><?php echo __( 'Web Safe Fonts', TVA_Const::T ) ?></option>
+				<option
+				<#= model.get('template').font_source === 'google' ? 'selected="selecter"' : '' #>
+				value="google"><?php echo __( 'Google Fonts', TVA_Const::T ) ?></option>
+			</select>
+			<label for="tva-fonts-source" class="tvd-active"><?php echo __( 'Font Source', TVA_Const::T ) ?> </label>
+		</div>
+	</div>
+	<div class="tva-input-holder">
+		<div id="tva-fonts"></div>
+	</div>
+
+	<div class="tva-input-holder tva-color-picker">
+		<p>
+			<?php echo __( 'Main Color Template', TVA_Const::T ) ?>
+		</p>
+		<i></i>
+		<div class="tvd-input-field">
+			<input id="tva-main-color-select" type="text" value="<#= model.get('template').main_color #>" name="main_color" class="tva-main-color-select"/>
+		</div>
+	</div>
+
+	<div class="tva-input-holder tva-change-logo-holder">
+		<p>
+			<?php echo __( 'Logo', TVA_Const::T ) ?>
+		</p>
+		<input type="text" readonly="readonly" placeholder="No file selected" class="tva-text-change tva-change-logo-input" name="logo_url"
+		       value="<#= model.get('template').logo_url #>">
+		<div class="tvd-input-field tva-change-logo-button">
+			<a href="javascript:void(0)"
+			   class="tvd-waves-effect tvd-waves-light tvd-btn tvd-btn-blue tva-change-logo"><?php echo __( 'Change', TVA_Const::T ) ?></a>
+		</div>
+		<div class="tva-card-content tva-logo-size">
+			<div class="tva-clear clearfix">
+				<div class="tva-range-field">
+					<div class="tvd-input-field range-field">
+						<label for="tva_logo_size">
+							<?php echo __( 'Size', TVA_Const::T ) ?>
+						</label>
+						<input type="range" class="tva-no-ui-slider" id="tva_logo_size" name="logo_size" value="<#= model.get( 'template' ).logo_size #>"
+						       min="10" max="600"/>
+					</div>
+				</div>
+				<div class="tva-number-field">
+					<div class="tvd-input-field">
+						<label for="tva_logo_size_input">
+							<?php echo __( 'px', TVA_Const::T ) ?>
+						</label>
+						<input type="number" class="tva-slider-input" id="tva_logo_size_input" name="logo_size"
+						       value="<#= model.get( 'template' ).logo_size #>"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tva-logo-type">
+			<input id="tva-logo-type" type="checkbox" <#= model.get('template').logo_type ? 'checked="checked"' : '' #> class="tva-logo-type">
+			<label for="tva-logo-type"><?php echo __( 'Add logo as Text', TVA_Const::T ) ?></label>
+		</div>
+		<div class="tva-text-logo-wrapper"></div>
+	</div>
+
+</div>
+
+<div class="tva-action-buttons">
+	<div class="tva-advanced-settings">
+		<div class="tvd-input-field">
+			<a href="javascript:void(0)" class="tvd-btn-flat tvd-btn-flat-secondary tvd-btn-flat-dark tvd-waves-effect tvd-btn tva-advanced-settings"
+			   style="padding: 0 15px"><?php echo __( 'Advanced Settings', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+	<# if(edit) { #>
+	<div class="tva-close-action">
+		<div class="tvd-input-field">
+			<a href="javascript:void(0)"
+			   class="tvd-waves-effect tvd-waves-light tvd-btn tvd-btn-gray tvd-left tva-close"><?php echo __( 'Close', TVA_Const::T ) ?></a>
+		</div>
+	</div>
+	<# } #>
+	<div class="tva-save-action">
+		<div class="tvd-input-field">
+			<a href="javascript:void(0)" class="tvd-btn tvd-btn-green tvd-waves-light tvd-right save-template"> <?php echo __( 'Save', TVA_Const::T ) ?> </a>
+		</div>
+	</div>
+</div>
+

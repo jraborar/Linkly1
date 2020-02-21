@@ -1,0 +1,33 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-content-container">
+	<div class="tva-elements-container"></div>
+
+	<# if ( this.model.get( 'lessons' ).length > 0 ) { #>
+	<div class="tva-item-content-options">
+		<a href="javascript:void(0)" class="tva-add-c-lesson">+ <?php _e( 'Add Lesson', TVA_Const::T ) ?></a>
+	</div>
+	<# } #>
+
+	<# if ( this.model.get( 'chapters' ).length > 0 ) { #>
+	<div class="tva-item-content-options tva-ico-chapters-only">
+		<a href="javascript:void(0)" class="tva-add-chapter-single">+ <?php _e( 'Add Chapter', TVA_Const::T ) ?></a>
+	</div>
+	<# } #>
+
+	<# if ( this.model.get( 'modules' ).length > 0 ) { #>
+	<div class="tva-item-content-options">
+		<a href="javascript:void(0)" class="tva-add-module-single">+ <?php _e( 'Add Module', TVA_Const::T ) ?></a>
+	</div>
+	<# } #>
+</div>

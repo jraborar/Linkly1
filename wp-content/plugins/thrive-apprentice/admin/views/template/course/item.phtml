@@ -1,0 +1,65 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-card tvd-white tvd-large tvd-slim-card tvd-pointer tva-go-to-course" data-id="<#= model.get('ID') #>">
+
+	<div class="tva-course-controls">
+		<# if(show_order) { #>
+		<i class="tva-drag-card">
+			<?php tva_get_svg_icon( 'arrows' ); ?>
+			<span class="tva-status-tooltip tooltip-left-aligned"><?php echo __( 'Drag and Drop to change the order of the courses', TVA_Const::T ) ?></span>
+		</i>
+		<# } #>
+
+		<div class="tva-delete-icon" style="display: inline-block">
+			<i class="tva-delete-course">
+				<?php tva_get_svg_icon( 'trash-alt' ); ?>
+				<span class="tva-status-tooltip tooltip-left-aligned"><?php echo __( 'Delete course', TVA_Const::T ) ?></span>
+			</i>
+		</div>
+		<a class="tva-preview-course-url" target="_blank"
+		   href="<#= model.get('url') #><#=  model.get('url') && model.get('url').indexOf('?') != -1  ? '&' : '?' #>preview=true">
+			<?php tva_get_svg_icon( 'eye' ); ?>
+			<span class="tva-status-tooltip tooltip-left-aligned"><?php echo __( 'Preview course', TVA_Const::T ) ?></span>
+		</a>
+
+		<i class="tva-course-status tvd-right tvd-relative <#= model.get('status') == 'publish' ? 'tva-course-published' : 'tva-course-unpublished' #>">
+			<# if(model.get('tooltiped')) { #>
+			<div class="tvd-tooltip-visible tvd-fixed-top tvd-normalize">
+				<span><?php echo __( 'Tip: You can now publish the course', TVA_Const::T ) ?></span>
+			</div>
+			<# } #>
+		</i>
+
+	</div>
+	<div class="tva-topic-holder-wrapper">
+		<div class="tva-topic-holder" style="background-color: <#= ( topic ) ? topic.get('color') : '' #>">
+			<span><#= ( topic ) ? topic.get('title') : '' #></span>
+		</div>
+	</div>
+	<div class="ta-course-icon"></div>
+	<div class="tvd-card-content">
+		<h3>
+			<#= model.get('name') #>
+		</h3>
+
+		<span><#= model.get('lessons_count') #> <#= model.get('lessons_count') <= 1 ? '<?php echo __( 'Lesson', TVA_Const::T ) ?>' : '<?php echo __( 'Lessons', TVA_Const::T ) ?>' #></span>
+		<div class="tvd-card-action">
+			<span class="tvd-left"><#= model.get('logged_in') > 0 ? '<?php echo __( 'Logged in Users', TVA_Const::T ) ?>' : '<?php echo __( 'Public', TVA_Const::T ) ?>' #></span>
+			<# if ( model.get('logged_in') > 0 ) {#>
+			<span class="tvd-right"><#= model.get('enrolled_users') #></#><?php echo __( ' Enrolled', TVA_Const::T ) ?></span>
+			<# } else { #>
+			<span class="tvd-right"><#= model.get('conversions') #></#><?php echo __( ' Views', TVA_Const::T ) ?></span>
+			<# } #>
+		</div>
+	</div>
+</div>

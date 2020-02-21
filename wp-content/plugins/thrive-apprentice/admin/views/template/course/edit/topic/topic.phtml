@@ -1,0 +1,18 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-material-option" data-id="<#= model.get( 'ID' ) #>">
+	<div class="tva-pre-holder" style="background-color: <#= model.get('color') #>"></div>
+	<p class="tva-lesson-detail" style="margin-left: 30px">
+		<#= model.get('name') #>
+	</p>
+</div>

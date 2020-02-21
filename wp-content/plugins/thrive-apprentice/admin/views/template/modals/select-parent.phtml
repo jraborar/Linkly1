@@ -1,0 +1,23 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div>
+	<h3 class="tvd-modal-title"><?php echo __( 'Add Course Content', TVA_Const::T ) ?></h3>
+	<p><?php echo __( 'Which <#= parent #>  would you like to add your <#= model.get("type") #> to?', TVA_Const::T ) ?></p>
+</div>
+<div class="tva-item-parent-container"></div>
+<div class="tva-item-optional-container"></div>
+
+<div class="tva-modal-footer tva-modal-footer-main">
+	<button type="button" class="tva-modal-prev-step"><?php echo __( 'Back', TVA_Const::T ) ?></button>
+	<button type="button" class="tvd-right tva-modal-validate-data tva-disabled-button"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+</div>

@@ -1,0 +1,16 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-receiver-<#= type #>-item tva-dropdown">
+	<#= name ? name : '<?php echo __( 'Select ', TVA_Const::T ) ?>' + type #>
+</div>
+<ul class="tva-available-receivers-<#= type #>s tva-material-list"></ul>

@@ -1,0 +1,54 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-floating tva-topic-title-holder tva-title-container">
+	<span title="<#= item.get('title') #>" class="tva-topic-title">
+		<#= item.get('title') #>
+	</span>
+	<span class="tvd-icon-pencil tvd-pointer tva-edit-topic-name"></span>
+</div>
+<div class="tva-floating tva-topic-icon-holder">
+	<div class="tva-icon-image"></div>
+	<a href="javascript:void(0)" class="tva-topic-option tva-image-option tva-change-image">
+		<span class="tva-text-option"><?php echo __( 'Image', TVA_Const::T ) ?></span>
+	</a>
+	<a href="javascript:void(0)" class="tva-topic-option tva-svg-option tva-change-icon">
+		<span class="tva-text-option"><?php echo __( 'Icon', TVA_Const::T ) ?></span>
+	</a>
+</div>
+<div class="tva-floating tva-topic-color-holder">
+	<input type="text" value="<#= item.get('color') #>" class="tva-topic-color"/>
+</div>
+<div class="tva-floating tva-topic-color-holder tva-change-icon-color tva-change-icon-color-fr">
+	<input type="text" value="<#= item.get('overview_icon_color') #>" class="tva-overview-icon-color"/>
+</div>
+<div class="tva-floating tva-topic-color-holder tva-change-icon-color tva-change-icon-color-fl">
+	<input type="text" value="<#= item.get('layout_icon_color') #>" class="tva-layout-icon-color"/>
+</div>
+<div class="tva-floating tva-topic-color-holder tva-not-available">
+	<span>
+		<?php echo __( 'not available', TVA_Const::T ) ?>
+		<i class="tva-info-icon">
+			i
+			<span class="tva-status-tooltip"><?php echo __( 'Topic images cannot be colored', TVA_Const::T ) ?></span>
+		</i>
+	</span>
+</div>
+<div class="tva-floating tva-topic-color-holder">
+	<div class="tva-topic-preview-overview"></div>
+	<div class="tva-topic-preview-layout"></div>
+</div>
+<div class="tva-floating tva-topic-remove-holder">
+	<a href="javascript:void(0)" class="tva-delete-topic tvd-save" data-id="<#= item.get('ID') #>">
+		<i class=""><?php tva_get_svg_icon( 'trash-alt' ); ?></i>
+	</a>
+</div>

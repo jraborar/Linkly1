@@ -1,0 +1,54 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-checkout-container">
+
+	<p class="checkout-p">
+		<?php echo __( 'This is the page your customer will see after they\'ve purchased your course through SendOwl', 'thrive-apprentice' ) ?>
+	</p>
+	<p class="checkout-p">
+		<a href="//fast.wistia.net/embed/iframe/x10zi7pmr5?popover=true" class="wistia-popover[height=450,playerColor=2bb914,width=800]">
+			<?php echo __( 'Learn more about thank you pages in SendOwl', 'thrive-apprentice' ) ?>
+		</a>
+	</p>
+
+	<div class="tva-cards">
+		<div class="tva-thankyou-type tva-thankyou-type-static <#= model.get('type') == 'static' ? 'tva-selected' : '' #>" data-type="static">
+			<?php tva_get_svg_icon( 'tyou-one' ); ?>
+			<p><?php echo __( 'Show a static confirmation page for all products', TVA_Const::T ) ?></p>
+		</div>
+
+		<div class="tva-thankyou-type tva-thankyou-type-redirect <#= model.get('type') == 'redirect' ? 'tva-selected' : '' #>" data-type="redirect">
+			<?php tva_get_svg_icon( 'tyou-three' ); ?>
+			<p><?php echo __( 'Redirect the user to the start of the purchased course', TVA_Const::T ) ?></p>
+		</div>
+	</div>
+
+	<div class="tva-notice tva-hide">
+		<div class="tva-notice-box">
+			<div class="tva-notice-elem">
+				<span class="svg-container"><?php tva_get_svg_icon( 'info-icon' ); ?></span>
+				<h3 class="notice-h3"><?php echo __( 'New Functionality Implemented ', 'thrive-apprentice' ) ?></h3>
+				<p class="tva-notice-text">
+					<?php
+					$url  = '<a href="#sendowl_quick_start">' . __( 'Quick Start Guide', 'thrive-apprentice' ) . '</a>';
+					$text = 'Visit %s and take the Create a Product in SendOwl tutorial to see the last updates.';
+
+					echo sprintf( $text, $url );
+					?>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="tva-thankyou-wrapper"></div>
+</div>

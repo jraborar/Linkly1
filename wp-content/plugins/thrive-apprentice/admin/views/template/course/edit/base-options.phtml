@@ -1,0 +1,27 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<h3><#= model.get('tag') === 'sendowl' ? 'SendOwl' : ThriveApp.util.upperFirst( model.get('tag') ) #> <?php echo __( 'protection options', TVA_Const::T ) ?></h3>
+<p><?php echo __( 'The user should also have any of the following ', TVA_Const::T ) ?><#= ThriveApp.util.upperFirst( model.get('tag') ) #> <?php echo __( 'Memberships attached in order to access this course.', TVA_Const::T ) ?></p>
+
+<div class="tva-mm-levels">
+	<span><?php echo __( 'User is Membership Level', TVA_Const::T ) ?></span>
+	<div class="tva-mm-lb-holder">
+		<div id="tva-<#= model.get('tag') #>-levels"></div>
+	</div>
+</div>
+<div class="tva-mm-bundles">
+	<span><?php echo __( 'And/or has one of the following bundles', TVA_Const::T ) ?></span>
+	<div class="tva-mm-lb-holder">
+		<div id="tva-<#= model.get('tag') #>-bundles"></div>
+	</div>
+</div>
+

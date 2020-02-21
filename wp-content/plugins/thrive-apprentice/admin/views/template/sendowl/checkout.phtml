@@ -1,0 +1,28 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tva-sendowl-settings tva-checkout-h"><?php echo __( 'Checkout Settings', TVA_Const::T ) ?></h3>
+
+<div class="tva-checkout-options">
+	<div class="tva-tab-item" data-tab="register">
+		<?php tva_get_svg_icon( 'edit' ); ?>
+		<span><?php echo __( 'Registration Page' ) ?></span>
+	</div>
+	<div class="tva-tab-item" data-tab="thankyou">
+		<?php tva_get_svg_icon( 'thumbs-up' ); ?>
+		<span><?php echo __( 'Thank You Page' ) ?></span>
+	</div>
+</div>
+
+<div class="tva-checkout-tabs"></div>
+
+<a class="back-to-the-dashboard" href="#sendowl_settings">&lt;&nbsp;<?php echo __( 'Back to Settings', TVA_Const::T ) ?></a>

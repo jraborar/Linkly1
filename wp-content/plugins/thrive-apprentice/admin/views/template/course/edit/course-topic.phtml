@@ -1,0 +1,15 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<option value="<#= model.get('ID') #>" <#= model.get('ID') == selected ? 'selected' : '' #>>
+	<#= model.get('title') #>
+</option>
+

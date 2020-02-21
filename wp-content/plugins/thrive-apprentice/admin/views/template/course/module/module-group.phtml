@@ -1,0 +1,48 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Are You Sure you want to Create a New Module?', TVA_Const::T ) ?></h3>
+		<p class="tva-modal-no-margin-p"><?php echo __( 'You are about to group the selected items into a new module. This action cannot be undone.', TVA_Const::T ) ?></p>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-submit tva-modal-next-step tvd-right"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Create New Module', TVA_Const::T ) ?></h3>
+        <p><?php echo __( 'Because we have some unselected items we will move them into a new module. Please insert the name
+of the new module:', TVA_Const::T ) ?></p>
+
+        <div class="tva-default-module-editor"></div>
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-submit tva-modal-next-step tvd-right"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+        <div class="tva-main-item-editor"></div>
+	</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,11 @@
+<div class="tvd-input-field">
+	<select class="tva-course-comments" id="tva-course-comments">
+		<option value="open" <#= model.get('comment_status') == 'open' ? 'selected' : '' #> >
+			<?php echo __( 'Yes' ) ?>
+		</option>
+		<option value="closed" <#= model.get('comment_status') == 'closed' ? 'selected' : '' #> >
+			<?php echo __( 'No' ) ?>
+		</option>
+	</select>
+	<label for="tva-course-topic"><?php echo __( 'Allow comments for this course', TVA_Const::T ) ?> </label>
+</div>

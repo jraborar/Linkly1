@@ -1,0 +1,28 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tvd-modal-title">
+	<?php echo __( 'Just to let you know...' ); ?>
+</h3>
+<p>
+	<?php echo __( "We will move all your existing <#= current_item #> inside the newly created <#= model.get('type') #>. None of your <#= current_item #> content will be lost.", TVA_Const::T ) ?>
+</p>
+<h3 class="tvd-modal-title">
+	<?php echo __( 'Are you sure you want to proceed?' ); ?>
+</h3>
+
+<div class="tva-modal-footer tva-modal-footer-main">
+    <# if(!restrict_back) { #>
+        <button type="button" class="tva-modal-prev-step"><?php echo __( 'Back', TVA_Const::T ) ?></button>
+    <# } #>
+    <button type="button" class="tva-modal-next-step tvd-right tva-button-gray"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+</div>

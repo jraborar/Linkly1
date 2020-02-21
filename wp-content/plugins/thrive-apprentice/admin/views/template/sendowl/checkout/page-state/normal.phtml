@@ -1,0 +1,40 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-create-state">
+	<h3 class="blue-h3"><?php echo __( 'For several courses purchased', 'thrive-apprentice' ) ?></h3>
+	<p class="checkout-p"><#= headlineMsg #></p>
+	<p class="checkout-p p-blue">
+		<?php echo __( 'Why do I need this?', 'thrive-apprentice' ) ?>
+		<span class="tva-status-tooltip"><?php echo __( 'If one of your customers purchases access to more than one course then we will show this thank you page rather than redirecting to the start of one of the courses.', TVA_Const::T ) ?></span>
+	</p>
+
+	<div class="tva-checkout-page">
+		<span class="tva-page-name"><#= model.get( 'name' ) #></span>
+		<div class="checkout-align">
+			<a class="tva-page-option" href="<#= model.get( 'preview_url' ) #>" target="_blank">
+				<?php tva_get_svg_icon( 'eye_light' ); ?>
+				<?php echo __( 'View', 'thrive-apprentice' ) ?>
+			</a>
+			<a class="tva-page-option" href="<#= model.get( 'edit_url' ) #>" target="_blank">
+				<?php tva_get_svg_icon( 'edit-no-tcb' ); ?>
+				<#= model.get( 'edit_text' ) #>
+			</a>
+			<a class="tva-page-option tva-remove-page" href="javascript:void(0)" data-page="checkout">
+				<?php tva_get_svg_icon( 'file-times_light' ); ?>
+				<?php echo __( 'Remove page', 'thrive-apprentice' ) ?>
+			</a>
+		</div>
+	</div>
+
+	<div class="tva-create-page-holder"></div>
+</div>

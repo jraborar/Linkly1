@@ -1,0 +1,26 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-delete-state">
+	<p class="tva-text">
+		<#= deleteMsg #>
+	</p>
+
+	<div class="clearfix">
+		<a href="javascript:void(0)" class="tvd-left tva-close">
+			<?php echo __( 'KEEP THIS PAGE', TVA_Const::T ) ?>
+		</a>
+		<a href="javascript:void(0)" class="tvd-right tva-remove">
+			<?php echo __( 'REMOVE THIS PAGE', TVA_Const::T ) ?>
+		</a>
+	</div>
+</div>

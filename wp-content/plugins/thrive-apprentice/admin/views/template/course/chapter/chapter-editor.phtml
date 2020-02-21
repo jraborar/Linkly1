@@ -1,0 +1,19 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tvd-modal-title"><#= model.get('ID') ? 'Edit' : 'Add' #> <?php echo __( 'Chapter', TVA_Const::T ) ?></h3>
+<div class="tva-chapter-editor">
+    <div class="tvd-input-field">
+        <input id="tva-item-title" type="text" placeholder="<?php echo __( 'Chapter Title', TVA_Const::T ) ?>" value="<#= model.get('post_title') #>" data-field="item_name">
+        <label for="tva-item-title" class="tva-custom-label"></label>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tva-modal-step">
+    <div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Add Module Content', TVA_Const::T ) ?></h3>
+		<p><?php echo __( 'Click on the box bellow to choose what you want to add as a content. You can add structural elements like chapters, or you can add content elements like lessons.', TVA_Const::T ) ?></p>
+
+        <div class="tva-modal-buttons">
+			<a href="javascript:void(0)" class="tva-modal-next-step" id="lesson">&plus;&nbsp;<?php echo __( 'Add Lesson', TVA_Const::T ) ?></a>
+			<a href="javascript:void(0)" class="tva-modal-next-step" id="chapter">&plus;&nbsp;<?php echo __( 'Add Chapter', TVA_Const::T ) ?></a>
+        </div>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close">
+			    <?php echo __( 'Cancel', TVA_Const::T ) ?>
+			</button>
+
+			<button type="button" class="tvd-submit tvd-modal-submit tvd-right">
+			    <?php echo __( 'Save', TVA_Const::T ) ?>
+			</button>
+		</div>
+    </div>
+</div>
+
+<div class="tva-modal-step">
+    <div class="tvd-modal-content">
+        <div class="">
+            <h3 class="tvd-modal-title"><?php echo __( 'Add Course Content', TVA_Const::T ) ?></h3>
+            <p><?php echo __( 'Please select the chapter in which you would like to add the new lesson', TVA_Const::T ) ?></p>
+        </div>
+        <div class="tva-item-parent-container">
+            <div class="tva-main-parent"></div>
+        </div>
+        <div class="tva-modal-footer tva-modal-footer-main">
+            <button type="button" class="tva-modal-prev-step"><?php echo __( 'Back', TVA_Const::T ) ?></button>
+            <button type="button" class="tva-modal-next-step tvd-right"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+        </div>
+    </div>
+</div>
+
+<div class="tva-modal-step">
+    <div class="tvd-modal-content">
+        <div class="tva-items-move-container"></div>
+        <div class="tvd-modal-footer">
+            <div class="tvd-row">
+                <div class="tvd-col tvd-s12 tvd-m6">
+                    <a href="javascript:void(0)"
+                       class="tvd-btn-flat tvd-btn-flat-secondary tvd-btn-flat-dark tvd-waves-effect tva-modal-prev-step">
+						<?php echo __( 'Back', TVA_Const::T ) ?>
+                    </a>
+                </div>
+                <div class="tvd-col tvd-s12 tvd-m6">
+                    <a href="javascript:void(0)"
+                       class="tvd-btn tvd-btn-green tvd-waves-light tvd-right tva-modal-next-step">
+						<?php echo __( 'Continue', TVA_Const::T ) ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tva-modal-step">
+    <div class="tvd-modal-content">
+        <div class="tva-editor-container tva-no-margin"></div>
+    </div>
+</div>
+
+

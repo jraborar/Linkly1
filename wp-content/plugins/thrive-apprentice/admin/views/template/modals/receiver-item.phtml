@@ -1,0 +1,21 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-main-parent">
+	<div class="tva-parent tva-selected-item tva-<#= model.get("type") #>-parent">
+		<span><#= model.get('post_title') ? model.get('post_title') : '<?php echo __( 'Select ', TVA_Const::T ) ?>' + model.get("type")#></span>
+	</div>
+
+	<div class="tva-reciever-container tva-<#= model.get("type") + 's' #>-container">
+		<ul class="tva-available-receivers-<#= model.get('type') + 's' #> tva-material-list"></ul>
+	</div>
+</div>

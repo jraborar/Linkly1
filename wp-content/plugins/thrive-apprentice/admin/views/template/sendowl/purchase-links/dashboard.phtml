@@ -1,0 +1,28 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tva-sendowl-settings tva-header-before-p"><?php echo __( 'Purchase Links', TVA_Const::T ) ?></h3>
+<p class="tva-missing-checkout-page tva-hide">
+	<?php echo __( 'You haven\'t set up your checkout page yet! In order to get your correct Purchase Links you need to set up your Checkout Page', TVA_Const::T ); ?>
+	<a target="_blank" href="#sendowl_checkout"><?php echo __( 'Here', TVA_Const::T ) ?></a>
+</p>
+
+<p class="sendowl-p"><?php echo __( 'Use the link generator below to get purchase links for any of your SendOwl products or bundles. ', TVA_Const::T ) ?>
+	<a href="//fast.wistia.net/embed/iframe/nvx732gvvb?popover=true" class="wistia-popover[height=450,playerColor=2bb914,width=800]">
+		<?php _e( 'Click here to see video instructions on how to use these links.', TVA_Const::T ) ?>
+	</a>
+</p>
+
+<div id="tva-purchase-links" class="tva-purchase-links-cards">
+	<div class="tva-cards"></div>
+	<div class="tva-so-purchase-links tva-sendowl-card-wide tva-hide"></div>
+</div>

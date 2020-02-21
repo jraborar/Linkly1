@@ -1,0 +1,21 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-level">
+	<div class="tva-material-option tvd-pointer" data-id="<#= model.get( 'ID' ) #>">
+		<span><#=  model.get( 'name' ) #></span>
+	</div>
+
+	<a class="tva-course-level-delete tvd-right" data-id="<#= model.get( 'ID' ) #>" href="javascript:void(0)">
+		<span><i class="tvd-icon-trash-o"></i></span>
+	</a>
+</div>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-checkout-container">
+	<p class="checkout-p">
+		<?php
+		echo __( 'This is the page where your customer will register for your course by creating their user account', TVA_Const::T );
+		?>
+	</p>
+	<p class="checkout-p">
+		<?php
+		$url_txt = __( ' Learn more about the registration page', TVA_Const::T );
+		$url     = '//fast.wistia.net/embed/iframe/ibqm3k93n0?popover=true';
+		$href    = '<a href="' . $url . '" class="wistia-popover[height=450,playerColor=2bb914,width=800]"> %s </a>';
+
+		echo sprintf( $href, $url_txt );
+		?>
+	</p>
+
+	<div class="tva-registration-page-container"></div>
+</div>
+

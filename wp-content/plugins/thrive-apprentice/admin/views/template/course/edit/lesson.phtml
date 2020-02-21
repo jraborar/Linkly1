@@ -1,0 +1,35 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-card tvd-white tvd-xsmall tvd-pointer tva-go-to-course" data-id="<#= model.get('ID') #>">
+	<div class="tva-course-controls">
+		<i class="tva-drag-card tvd-tooltipped" data-position="top"
+		   data-tooltip="<?php echo __( 'Drag and Drop in order to change the order of the courses', TVA_Const::T ) ?>">icon</i>
+		<i class="tva-delete-course">del</i>
+	</div>
+	<div class="tva-topic-holder" style="background-color: <#= ( topic ) ? topic.get('color') : '' #>">
+		<span><#= topic.get('title') #></span>
+		<div class="ta-course-icon">
+			<img src="<#= topic.get('icon') ? topic.get('icon') : topic.get('default_icon') #>">
+		</div>
+	</div>
+	<div class="tvd-card-content">
+		<h3>
+			<#= model.get('name') #>
+		</h3>
+		<span><#= model.get('lessons').length #> <?php echo __( 'Lessons', TVA_Const::T ) ?></span>
+		<div class="tvd-card-action">
+			<span class="tvd-left"><#= model.get('logged_in') > 0 ? 'Logged in Users' : 'Public' #></span>
+			<span class="tvd-right">100 <#= model.get('logged_in') > 0 ? 'Enrolled' : 'Views' #></span>
+		</div>
+	</div>
+</div>

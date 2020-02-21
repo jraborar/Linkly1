@@ -1,0 +1,26 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-difficulty-levels-list"></div>
+<div class="tvd-input-field tva-hide">
+	<input id="tva-add-level" class="tva-prop-input" type="text" value="" placeholder="Add Difficulty Level" data-field="add_level">
+</div>
+<div id="tva-course-difficulty" class="tva-add-course-level">
+	<?php tva_get_svg_icon( 'plus-circle' ); ?>
+	<?php echo __( 'Add Difficulty Level', 'thrive-apprentice' ) ?>
+</div>
+<div id="tva-course-difficulty" class="tva-save-course-level tva-hide">
+	<?php tva_get_svg_icon( 'check' ); ?>
+	<?php echo __( 'Save Level', 'thrive-apprentice' ) ?>
+</div>
+
+

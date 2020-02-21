@@ -1,0 +1,17 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tva-course-role-wrapper">
+	<div class="tva-course-role-holder">
+		<input type="checkbox" class="tva-course-role" id="tva-course-role-<#= model.get('ID') #>" <#= checked.hasOwnProperty(model.get('ID')) ? 'checked="checked"' : '' #> value="<#= model.get('ID') #>"/>
+		<label for="tva-course-role-<#= model.get('ID') #>" ><#= model.get('name') #></label>
+	</div>
+</div>

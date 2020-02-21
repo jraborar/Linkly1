@@ -1,0 +1,14 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<input id="tva-lesson-<#= model.get('old_id') #>" type="checkbox" class="tva-lesson-checkbox" <#= ! model.get('imported') ? 'checked=""' : '' #> value="<#= model.get('old_id') #>">
+<label for="tva-lesson-<#= model.get('old_id') #>"><#= model.get('post_title') #> <#= model.get('imported') ? '(Previously Imported)' : '' #></label>

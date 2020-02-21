@@ -1,0 +1,13 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<iframe id="tva_frame" style="width: 100%; height: 100%;" src="<#= model.get('no_protocol_url') #><#= model.get('iframe_url').indexOf('?') == -1 ? '?' : '&'  #><?php echo TVA_Const::TVA_FRAME_FLAG . '=' . wp_create_nonce(TVA_Const::TVA_FRAME_FLAG) ?>&tpl=<#= model.get('template').ID #><#=  model.get('advanced') ? '&tva_advanced=1' : ''#>"></iframe>

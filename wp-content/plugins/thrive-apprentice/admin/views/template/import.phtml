@@ -1,0 +1,37 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-import-title">
+	<p><?php echo __( 'Import Courses and Lessons', TVA_Const::T ) ?></p>
+	<p><?php echo __( 'Lessons from old Thrive apprentice that don\'t have any course / category set, will not appear here.', TVA_Const::T ) ?></p>
+</div>
+<div class="tvd-row">
+	<div class="tva-courses-container-holder">
+		<div class="tva-select-courses-holder">
+			<input id="tva-select-all-courses" type="checkbox" class="tva-select-all-courses">
+			<label for="tva-select-all-courses"><?php echo __( 'Select All', TVA_Const::T ) ?></label>
+		</div>
+		<div class="tvd-col tvd-s12 tva-courses-container"></div>
+	</div>
+</div>
+
+<div class="tvd-row tva-import-actions">
+	<div class="tvd-col tvd-s12">
+		<a href="#dashboard" class="tvd-btn-flat tvd-btn-flat-primary tvd-btn-flat-dark tvd-waves-effect">
+			<?php echo __( 'Cancel', TVA_Const::T ) ?>
+		</a>
+		<a href="javascript:void(0)"
+		   class="tvd-btn tvd-btn-green tvd-waves-light tvd-right tva-import-courses">
+			<?php echo __( 'Import selected', TVA_Const::T ) ?>
+		</a>
+	</div>
+</div>

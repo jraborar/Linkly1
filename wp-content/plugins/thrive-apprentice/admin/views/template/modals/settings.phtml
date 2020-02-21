@@ -1,0 +1,112 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-modal-content tva-general-settings">
+	<h3 class="tvd-modal-title"><?php echo __( 'General Settings', TVA_Const::T ) ?></h3>
+	<p><?php echo __( 'These settings apply to the page where your courses are displayed', TVA_Const::T ) ?></p>
+	<div class="tvd-v-spacer"></div>
+	<div class="tvd-row tvd-collapse">
+		<div class="tvd-col tvd-s12 tvd-m6">
+			<div class="tvd-input-field">
+				<input id="tva-apprentice-page" type="text" value="<#= model.get('index_page').name #>" data-field="index_page" placeholder="<?php echo __( 'Search for the page', TVA_Const::T ) ?>">
+				<label for="tva-apprentice-page"><?php echo __( 'Courses Page', TVA_Const::T ) ?></label>
+			</div>
+		</div>
+		<div class="tvd-col tvd-s12 tvd-m6">
+			<div class="tvd-input-field">
+				<input id="tva-per-page" type="number" value="<#= model.get('per_page') #>" data-field="per_page">
+				<label for="tva-per-page"><?php echo __( 'Courses per page', TVA_Const::T ) ?></label>
+			</div>
+		</div>
+		<div class="tvd-col tvd-s12 tvd-m6">
+			<label for="tva-load-scripts" class="tva-general-setting-label"><?php echo __( 'Load Themes and plugins scripts and styles?', TVA_Const::T ) ?></label>
+			<div class="tvd-switch">
+				<label>
+					<?php echo __( 'No', TVA_Const::T ) ?>
+					<input id="tva-load-scripts" <#= model.get('load_scripts') ? 'checked="checked"' : '' #> type="checkbox">
+					<span class="tvd-lever"></span>
+					<?php echo __( 'Yes', TVA_Const::T ) ?>
+				</label>
+			</div>
+		</div>
+
+		<?php  if ( function_exists( 'tve_leads_get_groups' ) ) : ?>
+			<div class="tvd-col tvd-s12 tvd-m6">
+				<label for="tva-auto-login" class="tva-general-setting-label"><?php echo __( 'Perform Auto-Login when creating a Wordpress Account?', TVA_Const::T ) ?></label>
+				<div class="tvd-switch">
+					<label>
+						<?php echo __( 'No', TVA_Const::T ) ?>
+						<input id="tva-auto-login" <#= model.get('auto_login') ? 'checked="checked"' : '' #> type="checkbox">
+							<span class="tvd-lever"></span>
+							<?php echo __( 'Yes', TVA_Const::T ) ?>
+					</label>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<div class="tva-gs-container">
+			<div>
+				<label for="tva-show-loginform" class="tva-general-setting-label"><?php echo __( 'Show the Login Form for not logged in users?', TVA_Const::T ) ?></label>
+				<div class="tvd-switch">
+					<label>
+						<?php echo __( 'No', TVA_Const::T ) ?>
+						<input id="tva-show-loginform" <#= model.get('loginform') ? 'checked="checked"' : '' #> type="checkbox" >
+						<span class="tvd-lever"></span>
+						<?php echo __( 'Yes', TVA_Const::T ) ?>
+					</label>
+				</div>
+			</div>
+			<div id="tva-register-container"></div>
+		</div>
+
+        <div class="tvd-col tvd-s12 tvd-m6" id="tva-register-container"></div>
+        <div class="tvd-col tvd-s12 tvd-m6">
+			<label for="tva-show-apprentice-label" class="tva-general-apprentice-label"><?php echo __( 'Show Apprentice label?', TVA_Const::T ) ?></label>
+			<div class="tvd-switch">
+				<label>
+					<?php echo __( 'No', TVA_Const::T ) ?>
+					<input id="tva-show-apprentice-label" <#= model.get('apprentice_label') === true ? 'checked="checked"' : '' #> type="checkbox">
+						<span class="tvd-lever"></span>
+						<?php echo __( 'Yes', TVA_Const::T ) ?>
+				</label>
+			</div>
+		</div>
+        <div class="tvd-col tvd-s12 tvd-m6">
+            <label for="tva-comements-status" class="tva-comments"><?php echo __( 'Do you want to enable comments for courses?', TVA_Const::T ) ?></label>
+            <div class="tvd-switch">
+                <label>
+					<?php echo __( 'No', TVA_Const::T ) ?>
+                    <input id="tva-comements-status" <#= model.get('comment_status') == 'open' ? 'checked="checked"' : '' #> type="checkbox">
+                        <span class="tvd-lever"></span>
+						<?php echo __( 'Yes', TVA_Const::T ) ?>
+                </label>
+            </div>
+        </div>
+        <div class="tvd-col tvd-s12 tvd-m6" id="tva-register-container"></div>
+	</div>
+</div>
+<div class="tvd-modal-footer">
+	<div class="tvd-row">
+		<div class="tvd-col tvd-s12 tvd-m6">
+			<a href="javascript:void(0)"
+			   class="tvd-btn-flat tvd-btn-flat-secondary tvd-btn-flat-dark tvd-waves-effect tvd-modal-close">
+				<?php echo __( 'Cancel', TVA_Const::T ) ?>
+			</a>
+		</div>
+		<div class="tvd-col tvd-s12 tvd-m6">
+			<a href="javascript:void(0)"
+			   class="tvd-btn tvd-btn-green tvd-waves-light tvd-right tvd-modal-submit">
+				<?php echo __( 'Save', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+</div>

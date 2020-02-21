@@ -1,0 +1,43 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-apprentice
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-modal-content tva-modal-ch-icon">
+	<h3 class="tvd-modal-title"><?php echo __( 'Choose an icon', TVA_Const::T ) ?></h3>
+
+	<div class="tvd-row">
+		<input type="text" placeholder="<?php echo __( 'Search icon', TVA_Const::T ) ?>" class="tva-search-icons">
+	</div>
+
+	<div class="tvd-row tva-icons-list">
+		<div class="tva-custom-icons">
+			<div class="tva-custom-icons-title">
+				<h4><?php echo __( 'Custom Icons', 'thrive-apprentice' ) ?></h4>
+			</div>
+			<div class="tva-custom-icons-list"></div>
+		</div>
+		<h4 class="tva-svg-icons-title"><?php echo __( 'Font Awesome Icons', 'thrive-apprentice' ) ?></h4>
+		<div class="tva-font-awesome-icons"></div>
+	</div>
+
+	<div id="tva-icons-svg"></div>
+
+	<div class="tva-modal-footer">
+		<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', 'thrive-apprentice' ) ?></button>
+		<button type="button" class="tvd-modal-submit tvd-right"><?php echo __( 'Select', 'thrive-apprentice' ) ?></button>
+	</div>
+</div>
+
+<style>
+	.tva-custom-icons-title {
+		display: none;
+	}
+</style>

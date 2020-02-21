@@ -1,0 +1,6 @@
+<div>
+	<input id="tva-integration-item-<#= item.getId() #>" type="checkbox" <#= typeof checked !== 'undefined' && checked ? 'checked="checked"' : ''#> >
+	<label class="click" data-fn="setIntegrationItem" data-params="<#= item.getId() #>" for="tva-integration-item-<#= item.getId() #>">
+		<#= item.getName() #>
+	</label>
+</div>

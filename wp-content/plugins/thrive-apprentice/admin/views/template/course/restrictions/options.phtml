@@ -1,0 +1,78 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tva-extend-advanced">
+	<div class="clearfix">
+		<label for="tva-course-logged-in" class="tva-general-setting-label label-restrict tvd-tooltipped"
+		       data-tooltip="<?php echo __( 'The course will only be available for users which are logged in to Wordpress.', TVA_Const::T ) ?>">
+			<?php echo __( 'Restrict access', TVA_Const::T ) ?></label>
+		<div class="tvd-switch">
+			<label>
+				<input id="tva-course-logged-in" <#= model.get('logged_in') == 1 ? 'checked="checked"' : '' #> type="checkbox" >
+				<span class="tvd-lever"></span>
+			</label>
+		</div>
+	</div>
+</div>
+<div class="tva-course-no-restrictions">
+	<p class="tva-no-restrictions-p"><?php echo __( 'This course is available for everyone', TVA_Const::T ) ?></p>
+</div>
+<div class="tva-course-restrictions-options">
+
+	<div class="tva-adv-wrapper tva-adv-wrapper-special tva-border-top">
+		<div class="tva-lessons-exclusion  <# if(  ThriveApp.globals.settings.get( 'membership_plugin' ).length > 0) { #> mt50 <# } #> ">
+			<span><?php echo __( 'Exclude first ', TVA_Const::T ) ?></span>
+			<div class="tvd-input-field">
+				<input id="tva-course-excluded" min="0" type="number" value="<#= model.get('excluded') ?  model.get('excluded') : 0 #>"
+				       data-field="course_excluded"/>
+			</div>
+			<span>
+			<?php echo __( ' Lessons from the protection rules', TVA_Const::T ) ?>
+			<i class="tva-info-icon tvd-tooltipped"
+			   data-tooltip="<?php echo __( 'The selected number of lessons will be accessible by non-logged in users and users with different roles or membership statuses than the ones selected in the rules in case you want to offer a number of lessons for free. ', TVA_Const::T ) ?>">i</i>
+		</span>
+		</div>
+	</div>
+
+	<div class="tva-adv-wrapper">
+		<div class="tva-settings-container">
+			<span><?php echo __( 'Message for users that do not have access', TVA_Const::T ) ?></span>
+			<div class="tva-textarea-container">
+				<textarea id="tva-course-message"><#= model.get('message') #></textarea>
+			</div>
+		</div>
+
+		<div class="tva-settings-container tva-restriction-labels">
+			<div class="tva-course-level">
+				<div class="tva-course-label-controls"></div>
+				<div class="tva-course-label-values" style="z-index: 9999; display: none;">
+					<ul class="tva-course-labels-list"></ul>
+					<div class="clearfix">
+						<div class="tvd-input-field tvd-left tva-label-prop">
+							<input id="tva-add-label" class="tva-prop-input" type="text" value="" data-field="add_label">
+							<label for="tva-add-label"><?php echo __( 'Add Label', TVA_Const::T ) ?></label>
+							<input type="text" class="tva-label-add-color" value=""/>
+						</div>
+						<a href="javascript:void(0)" class="tvd-btn tvd-btn-green tvd-waves-light tva-add-course-label tvd-right">
+							<?php echo __( 'Add Label', TVA_Const::T ) ?>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="tva-add-course-actions">
+	<a href="javascript:void(0)" class="tvd-right tva-save-course-restrictions">
+		<?php echo __( 'Save', TVA_Const::T ) ?>
+	</a>
+</div>

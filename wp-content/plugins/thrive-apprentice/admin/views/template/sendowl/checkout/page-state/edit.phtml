@@ -1,0 +1,42 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<div class="tva-create-state">
+	<h3 class="blue-h3"><?php echo __( 'For several courses purchased', 'thrive-apprentice' )?></h3>
+	<p class="checkout-p"><#= headlineMsg #></p>
+	<p class="checkout-p p-blue">
+		<?php echo __( 'Why do I need this?', 'thrive-apprentice' ) ?>
+		<span class="tva-status-tooltip"><?php echo __( 'If one of your customers purchases access to more than one course then we will show this thank you page rather than redirecting to the start of one of the courses.', TVA_Const::T ) ?></span>
+	</p>
+
+	<div class="tva-checkout-page <#= model.get( 'old_page_name' ) ? '' : 'tva-hide' #>">
+		<span class="tva-page-name"><#= model.get( 'old_page_name' ) #></span>
+	</div>
+
+	<a href="javascript:void(0)" class="tva-create-new-page">
+		<?php tva_get_svg_icon( 'plus-circle' ); ?><?php echo __( 'Create new page', 'thrive-apprentice' ) ?>
+	</a>
+
+	<div class="tva-edit-page-holder">
+		<input id="tva-edit-page-title" placeholder="<?php echo __( 'Page title', 'thrive-apprentice' ) ?>" class="tvd-save tva-sendowl-input tva-sendowl-page" type="text" value="" data-field="name">
+
+		<div class="clearfix tva-edit-options">
+			<a href="javascript:void(0)" class="tva-close">
+				<?php echo __( 'Cancel', TVA_Const::T ) ?>
+			</a>
+			<a href="javascript:void(0)" class="tva-save">
+				<?php echo __( 'Add Page', TVA_Const::T ) ?>
+			</a>
+		</div>
+	</div>
+</div>
+
+

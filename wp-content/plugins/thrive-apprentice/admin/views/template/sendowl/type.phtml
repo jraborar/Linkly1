@@ -1,0 +1,14 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package local.thrivethemes.com
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+
+?>
+<input type="checkbox" <#= model.get('checked') ? 'checked="checked"' : '' #> class="tve-debug-type-change" id="tve-debug-type-<#= model.get('id') #>" value="">
+<label for="tve-debug-type-<#= model.get('id') #>"><#= model.get('type') #></label>

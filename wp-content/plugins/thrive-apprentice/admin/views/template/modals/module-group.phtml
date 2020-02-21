@@ -1,0 +1,71 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Warning', TVA_Const::T ) ?><#= model.get('head_title') #></h3>
+		<p><?php echo __( 'You\'re about to group selected items in a new module. This process can\'t be undone. Do you want to continue? ', TVA_Const::T ) ?></p>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-submit tva-modal-next-step tvd-right"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Create New Module', TVA_Const::T ) ?><#= model.get('head_title') #></h3>
+		<p><?php echo __( 'Because we have some unselected items we will move them into a new module. Please insert the name
+of the new module:', TVA_Const::T ) ?></p>
+
+        <div class="tva-default-module-editor"></div>
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-submit tva-modal-next-step tvd-right"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<h3 class="tvd-modal-title"><?php echo __( 'Add module for unselected items', TVA_Const::T ) ?></h3>
+		<div class="tvd-row tvd-collapse tva-add-item-no-margin">
+			<div class="tvd-col tvd-s12">
+				<div class="tvd-input-field">
+					<input id="tva-item-title" type="text" value="<#= model.get('post_title') #>" data-field="item_name">
+					<label for="tva-item-title"><?php echo __( 'Title', TVA_Const::T ) ?></label>
+				</div>
+			</div>
+		</div>
+
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tva-modal-prev-step"><?php echo __( 'Back', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-submit tva-modal-next-step tvd-right"><?php echo __( 'Continue', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+<div class="tva-modal-step">
+	<div class="tvd-modal-content">
+		<div class="tva-modal-chapter-container"></div>
+		<div class="tva-modal-footer tva-modal-footer-main">
+			<button type="button" class="tvd-modal-close"><?php echo __( 'Cancel', TVA_Const::T ) ?></button>
+			<button type="button" class="tvd-submit tvd-modal-submit tvd-right"><?php echo __( 'Save', TVA_Const::T ) ?></button>
+		</div>
+	</div>
+</div>
+
+
+
+
+

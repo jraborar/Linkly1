@@ -1,0 +1,15 @@
+<div class="tva-sendowl-notice">
+	<div class="tva-warning tva-notice-extra">
+		<span class="svg-container"><?php tva_get_svg_icon( 'info-icon' ); ?></span>
+		<h3><?php echo __( 'Account Keys Missing', 'thrive-apprentice' ) ?></h3>
+		<p>
+			<?php
+			$text = 'The SendOwl account keys are missing. You can %s to set them. Please make sure to save the current course settings in order not to lose the current progress.';
+			$url  = get_admin_url() . 'admin.php?page=tva_dashboard#sendowl_integration';
+
+			echo sprintf( $text, '<a href="' . $url . '">' . __( 'click here', 'thrive-apprentice' ) . '</a>' );
+			?>
+		</p>
+
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div>
+    <h3 class="tvd-modal-title">
+		<?php echo __( 'Warning!' );?>
+    </h3>
+    <p>
+		<?php echo __( "You are about to add a new <#= this.new_item #>. Because you already have <#= current_item #>s we will move them inside the new created <#= this.new_item #>." , TVA_Const::T ) ?>
+    </p>
+    <h3 class="tvd-modal-title">
+		<?php echo __( 'Do you want to proceed ?' );?>
+    </h3>
+</div>

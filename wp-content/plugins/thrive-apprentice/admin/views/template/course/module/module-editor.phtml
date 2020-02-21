@@ -1,0 +1,32 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tvd-modal-title"><#= model.get('ID') ? 'Edit' : 'Add' #> <?php echo __( 'Module', TVA_Const::T ) ?></h3>
+
+<div class="tva-add-item-no-margin tvd-input-field">
+	<input id="tva-item-title" type="text" placeholder="<?php echo __( 'Module Title', TVA_Const::T ) ?>" value="<#= model.get('post_title') #>"
+	       data-field="item_name">
+	<label for="tva-item-title" class="tva-custom-label"></label>
+</div>
+
+<div class="tva-add-item-no-margin">
+	<div class="">
+            <span class="tva-add-item-short-description">
+				<?php echo __( 'Description', TVA_Const::T ) ?>
+				<span class="tva-status-tooltip tooltip-left-aligned"><?php echo __( 'This will be displayed on the course overview page', TVA_Const::T ) ?></span>
+			</span>
+		<textarea id="tva-item-description"><#= model.get('post_excerpt') #></textarea>
+	</div>
+</div>
+
+<div class="tva-comments-container"></div>
+<div class="tva-item-cover-image"></div>

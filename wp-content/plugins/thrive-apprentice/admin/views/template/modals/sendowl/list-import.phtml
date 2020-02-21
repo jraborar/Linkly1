@@ -1,0 +1,37 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-import-modal">
+
+	<h3 class="tvd-modal-title"><?php echo __( 'Bulk Add Customers', TVA_Const::T ) ?></h3>
+
+	<p><?php echo __( 'Add the name and email address of each customer, separated by a coma. One customer per line', TVA_Const::T )?></p>
+
+	<textarea class="tvd-materialize-textarea" id="tva-list-import" placeholder="<#= ThriveApp.t.PlaceholderData #>"></textarea>
+
+	<div class="tva-invalid-list-message">
+		<p><?php echo __( 'A problem has occurred while attempting to read the list of names that you’ve added.  It seems that the list that you’ve provided isn’t correctly formatted.', TVA_Const::T )?></p>
+		<p><?php echo __( 'The list needs to have:', TVA_Const::T )?></p>
+		<p><?php echo __( '1) names and email addresses separated by a comma and a space between name and email (e.g “john doe, john@email.com”)', TVA_Const::T )?></p>
+		<p><?php echo __( '2) each customer on a new line', TVA_Const::T )?></p>
+		<p><?php echo __( 'Please make sure that your list is formatted correctly and try the import again.', TVA_Const::T )?></p>
+	</div>
+
+	<div class="tva-invalid-lines"></div>
+
+</div>
+
+<style>
+	.tva-invalid-list-message {
+		display: none;
+	}
+</style>

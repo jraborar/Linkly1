@@ -1,0 +1,37 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-modal-content tva-customer-styling">
+	<div class="tva-modal-header">
+		<h3 class="tvd-modal-title"><?php echo __( 'Edit Customer', TVA_Const::T ) ?></h3>
+	</div>
+
+	<div class="tva-modal-content tva-edit-customer">
+		<div class="">
+			<p><strong><#= model.get('display_name') #></strong> (<#= model.get('user_email') #>) <?php echo __( 'has access to the following:', TVA_Const::T ) ?></p>
+		</div>
+
+		<div class="tva-mr">
+			<p class="mb-small"><?php echo __( 'Products', TVA_Const::T ) ?></p>
+
+			<div class="tva-modal-card tva-sendowl-products"></div>
+		</div>
+
+		<div class="">
+			<p class="mb-small"><?php echo __( 'Bundles', TVA_Const::T ) ?></p>
+
+			<div class="tva-modal-card tva-sendowl-bundles"></div>
+		</div>
+	</div>
+
+	<button type="button" class="tvd-right tvd-modal-submit"><?php echo __( 'Save', TVA_Const::T ) ?></button>
+</div>

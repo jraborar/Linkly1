@@ -1,0 +1,10 @@
+<span><?php echo __( 'Allow users comment on this module', TVA_Const::T )?></span>
+<div class="allow-comms-container">
+	<div class="tva-selected-option">
+		<span> <#= model.get( 'comment_status' ) === 'closed' ? '<?php echo __( 'No', TVA_Const::T )?>' : '<?php echo __( 'Yes', TVA_Const::T )?>' #> </span>
+	</div>
+	<ul class="tva-available-options">
+		<li class="tva-option-type" data-status="open"><?php echo __( 'Yes', TVA_Const::T )?></li>
+		<li class="tva-option-type" data-status="closed"><?php echo __( 'No', TVA_Const::T )?></li>
+	</ul>
+</div>

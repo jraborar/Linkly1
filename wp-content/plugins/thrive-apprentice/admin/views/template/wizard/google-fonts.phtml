@@ -1,0 +1,37 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-input-field">
+	<select class="tva-fonts-select" id="tva-fonts-select"></select>
+	<label for="tva-fonts-select"><?php echo __( 'Font Family', TVA_Const::T ) ?> </label>
+</div>
+
+<div class="tvd-row">
+    <div class="tvd-col tvd-s6 tvd-no-padding-left">
+        <div class="tvd-input-field">
+            <select class="tva-regular-select" id="tva-regular-select"></select>
+            <label for="tva-regular-select"><?php echo __( 'Regular', TVA_Const::T ) ?> </label>
+        </div>
+    </div>
+    <div class="tvd-col tvd-s6 tvd-no-padding-right">
+        <div class="tvd-input-field tva-bold-holder">
+            <select class="tva-bold-select" id="tva-bold-select"></select>
+            <label for="tva-bold-select"><?php echo __( 'Bold', TVA_Const::T ) ?> </label>
+        </div>
+    </div>
+</div>
+
+
+<div class="tvd-input-field">
+    <select class="tva-charset-select" id="tva-charset-select"></select>
+    <label for="tva-charset-select"><?php echo __( 'Charset', TVA_Const::T ) ?> </label>
+</div>

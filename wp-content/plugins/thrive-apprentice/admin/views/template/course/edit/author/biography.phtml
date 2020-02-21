@@ -1,0 +1,58 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-show-advanced tva-heading">
+	<strong>
+		<a href="javascript:void(0)" class="tva-heading-title">
+			<?php echo __( 'Show Author Settings', 'thrive-apprentice' ) ?>
+		</a>
+		<a href="javascript:void(0)" class="tva-heading-title tva-hide">
+			<?php echo __( 'Hide Author Settings', 'thrive-apprentice' ) ?>
+		</a>
+		<?php tva_get_svg_icon( 'arrow-upd' ); ?>
+	</strong>
+</div>
+<div class="tva-advanced-settings tva-biography-settings">
+	<div class="tva-fixed-content">
+		<div class="tva-authors">
+			<div class="tvd-input-field">
+				<input id="tva-course-author" readonly type="text" value="<#= model.get('user_login') #>" data-field="author">
+				<label for="tva-course-author"><?php echo __( 'Teacher (Search by email or name)', TVA_Const::T ) ?></label>
+			</div>
+		</div>
+		<div class="tva-biography">
+			<div class="tvd-input-field">
+				<select class="tva-author-biography" id="tva-author-biography">
+					<option value="custom_bio">
+						<?php echo __( 'Custom bio for this course', 'thrive-apprentice' ) ?>
+					</option>
+					<option value="wordpress_bio">
+						<?php echo __( 'WordPress user bio', 'thrive-apprentice' ) ?>
+					</option>
+				</select>
+				<label for="tva-course-topic"><?php echo __( 'Teacher Biography', 'thrive-apprentice' ) ?> </label>
+			</div>
+		</div>
+		<div class="tva-textarea-holder">
+			<span class="tva-subtitle"><?php echo __( 'Description', TVA_Const::T ) ?></span>
+			<div class="tva-textarea-container">
+				<textarea id="tva-author-description"><#= model.get('custom_biography') #></textarea>
+			</div>
+		</div>
+	</div>
+
+	<div class="tva-author-image">
+		<p><?php echo __( 'Teacher Image', 'thrive-apprentice' )?></p>
+
+		<div class="tva-author-image-holder"></div>
+	</div>
+</div>

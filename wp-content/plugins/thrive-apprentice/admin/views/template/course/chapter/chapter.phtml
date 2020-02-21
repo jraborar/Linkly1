@@ -1,0 +1,74 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-chapter-container tva-parent-item <#= model.get( 'expanded' ) ? 'tva-chapter-expanded' : '' #>" id="tva-chapter-<#= model.get('ID') #>">
+	<div class="tva-chapter-controls">
+		<# if ( model.get('expanded') === false ) { #>
+		<span class="tva-drag-card tva-drag-chapter">
+<!--                <span class="tva-status-tooltip">--><?php //echo __( 'drag', TVA_Const::T ) ?><!--</span>-->
+            </span>
+		<# } #>
+	</div>
+	<div class="tva-chapter-header">
+		<div>
+			<div class="tva-item-name">
+				<div class="tva-checkbox">
+					<input data-id="<#= model.get('ID') #>" class="tva-select-items" <#= model.get('checked') ? 'checked' : '' #> type="checkbox"
+					id="tva-select-item-<#= model.get('ID') #>"/>
+					<label for="tva-select-item-<#= model.get('ID') #>"></label>
+				</div>
+				<div class="tva-chapter-title-container">
+					<div class="tva-chapter-status <#= status #>">
+						<# if ( model.get( 'post_status' ) === 'draft' ) { #>
+						<span class="tva-status-tooltip"><#= ThriveApp.t.ChapterNotPublished #></span>
+						<# } else if ( ( !! model.get( 'lessons' ).findWhere( {post_status: 'publish'} ) ) &&
+						!! model.get( 'lessons' ).findWhere( {post_status: 'draft'} ) ) { #>
+						<span class="tva-status-tooltip"><?php echo __( 'Chapter ', TVA_Const::T ) ?><#= ThriveApp.t.ContentNotPublished #></span>
+						<# } else { #>
+						<span class="tva-status-tooltip"><#= ThriveApp.t.ChapterPublished #></span>
+						<# } #>
+					</div>
+					<span class="tva-le-chapter"><?php echo __( 'Chapter ', TVA_Const::T ) ?> <#= parseInt( index ) #></span>
+					<div class="tva-counter">
+						<span class="tva-brackets">(</span>
+						<span class="tva-empty <#= model.get('lessons').length > 0 ? 'tva-hide' : '' #>"><?php echo __( 'Empty', TVA_Const::T ) ?></span>
+						<span class="tva-ch-lessons-count tva-hide"><?php echo __( 'Lessons ', TVA_Const::T ) ?><#= model.get('lessons').length #></span>
+						<span class="tva-brackets">)</span>
+					</div>
+					<br/>
+					<h1 class="tva-item-title tva-chapter-title">
+						<#= model.get('post_title') #>
+						<#= ThriveApp.TVA_DEBUG ? model.get('ID') : '' #>
+						<#= ThriveApp.TVA_DEBUG ? model.get('tva_chapter_order') : '' #>
+					</h1>
+					<span class="tva-edit-chapter-name"><?php tva_get_svg_icon( 'adm-edit-w-tar' ); ?></span>
+				</div>
+			</div>
+			<div class="tva-item-edit">
+				<a href="javascript:void(0)" class="tva-delete-chapter">
+					<?php echo __( 'Delete Chapter', TVA_Const::T ) ?>
+				</a>
+				<a href="javascript:void(0)" class="tva-cm-arrow <#= model.get('expanded') ? 'tva-collapse-chapter' : 'tva-expand-chapter' #>"></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="tva-elements-container" style="<#= !this.model.get( 'expanded' ) ? 'display: none;' : '' #>">
+	<# if(model.get('lessons').length === 0 ){ #>
+	<div class="tva-lessons-section"></div>
+	<# }#>
+
+	<div class="tva-item-content-options tva-chapter-content-options">
+		<a href="javascript:void(0)" class="tva-add-chapter-lesson">+ <?php echo __( 'Add Lesson', TVA_Const::T ) ?></a>
+	</div>
+</div>

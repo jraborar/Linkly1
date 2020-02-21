@@ -1,0 +1,50 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-import-modal">
+
+	<h3 class="tvd-modal-title"><?php echo __( 'Import Customer List from SendOwl', TVA_Const::T ) ?></h3>
+
+	<p>
+		<?php echo __( 'Drop the file to be uploaded below', TVA_Const::T )?>
+		<a href="https://thrivethemes.com/tkb_item/where-to-find-the-list-of-customers-in-sendowl/" target="_blank"><?php echo __( 'Click here ', TVA_Const::T )?></a>
+		<?php echo __( 'to see where to find this file in SendOwl', TVA_Const::T )?>.</p>
+
+	<div class="tva-drop-file">
+		<div id="tva-drop-layer"></div>
+		<div class="tva-drop-file-elem" id="tva-drop-zone">
+			<div class="tva-drop-one">
+				<span class="tva-add-file" >
+					<?php tva_get_svg_icon( 'paperclip' ); ?><?php echo __( 'Add file ', TVA_Const::T ) ?>
+				</span>
+					<?php echo __( 'or drop files here', TVA_Const::T ) ?>
+					<span class="tva-file-name">
+					<# if (files.length > 0 ) { #>
+						<div>
+							<span class="tva-add-file"> <#= files[0].name #> </span>
+						</div>
+					<# } #>
+				</span>
+			</div>
+			<div class="tva-drop-two">
+				<?php tva_get_svg_icon( 'arrow-circle-up' ); ?>
+				<?php echo __( 'Drop your files to upload', TVA_Const::T ) ?>
+			</div>
+		</div>
+		<form style="display: none;" id="tva-form" action="" method="" enctype="multipart/form-data">
+			<input id="tva-upload-file" type="file" accept="csv/*" >
+		</form>
+	</div>
+	<p class="tva-invalid-file-type">
+		<?php echo __( 'A problem has occurred because the file that you’ve selected isn’t a CSV file. Please make sure that the file is a CSV file and try again.', TVA_Const::T ) ?>
+	</p>
+</div>

@@ -1,0 +1,17 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-course">
+	<input  id="tva-course-<#= model.get('term_id') #>" type="checkbox" class="tva-course-checkbox" <#= model.get('checked') ? 'checked' : '' #> value="<#= model.get('term_id') #>">
+	<label for="tva-course-<#= model.get('term_id') #>"><#= model.get('name') #> <#= model.get('exists') ? '(Already Exists)' : '' #></label>
+	<ul class="tva-lessons-container"></ul>
+</div>

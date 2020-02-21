@@ -1,0 +1,27 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-drag-item"></div>
+
+<div class="tva-item-title">
+	<p><#= this.model.get('post_title') #></p>
+</div>
+
+<# if (this.model.get('post_type') === 'tva_module') { #>
+    <# if (this.model.get('chapters').length > 0) { #>
+        <div class="tva-module-control tva-module-collapsed"></div>
+    <# } #>
+
+    <# if ( (this.model.get('chapters').length === 0) && (this.model.get('lessons').length === 0) ) { #>
+        <div class="tva-chapters-list" style="min-height: 10px"></div>
+    <# } #>
+<#}#>

@@ -1,0 +1,21 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<h3><#= ThriveApp.util.upperFirst( model.get('tag') ) #> <?php echo __( 'protection options', TVA_Const::T ) ?></h3>
+<p><?php echo __( 'The user should also have any of the following Wishlist Memberships attached in order to access this course.', TVA_Const::T ) ?></p>
+
+<div class="tva-mm-levels">
+    <span><?php echo __( 'User is Membership Level', TVA_Const::T ) ?></span>
+    <div class="tva-mm-lb-holder">
+        <div id="tva-wishlist-levels"></div>
+    </div>
+</div>
+

@@ -1,0 +1,104 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-module-container tva-parent-item <#= model.get( 'expanded' ) ? 'tva-module-expanded' : '' #>">
+	<div class="tva-module-controls">
+		<# if ( model.get('expanded') === false ) { #>
+		<span class="tva-drag-card tva-drag-module"></span>
+		<# } #>
+	</div>
+	<div class="tva-module-name-container">
+		<div class="tva-checkbox">
+			<input data-id="<#= model.get('ID') #>" class="tva-select-items" <#= model.get('checked') ? 'checked' : '' #> type="checkbox"
+			id="tva-select-item-<#= model.get('ID') #>"/>
+			<label for="tva-select-item-<#= model.get('ID') #>"></label>
+		</div>
+
+		<div class="tvd-card-content">
+			<div class="tva-module-header">
+				<div>
+					<div class="tva-module-title-container tva-title-container">
+						<div class="tva-module-status <#= status #>">
+							<# if ( model.get( 'post_status' ) === 'draft' ) { #>
+							<span class="tva-status-tooltip"><#= ThriveApp.t.ModuleNotPublished #></span>
+							<# } else if ( ( !! model.get( 'lessons' ).findWhere( {post_status: 'draft'} ) ) ||
+							( !! model.get( 'chapters' ).findWhere( {post_status: 'draft'} ) ) || unpublished_lessons ) { #>
+							<span class="tva-status-tooltip"> <?php echo __( 'Module ', TVA_Const::T ) ?> <#= ThriveApp.t.ContentNotPublished #></span>
+							<# } else {#>
+							<span class="tva-status-tooltip"><#= ThriveApp.t.ModulePublished #></span>
+							<# } #>
+						</div>
+						<span class="tva-le-module"><?php echo __( 'Module ' ) ?> <#= parseInt( model.get('order') ) + 1 #> </span>
+						<div class="tva-counter">
+							<span class="tva-brackets">(</span>
+							<span class="tva-empty tva-hide"><?php echo __( 'Empty', TVA_Const::T ) ?></span>
+							<span class="tva-chapters-count tva-hide"><?php echo __( 'Chapters ', TVA_Const::T ) ?> <#= chapters_count #></span>
+							<span class="tva-comma tva-hide">,</span>
+							<span class="tva-lessons-count tva-hide"><?php echo __( 'Lessons ', TVA_Const::T ) ?><#= lessons_count #></span>
+							<span class="tva-brackets">)</span>
+						</div>
+						<br/>
+						<h1 class="tva-module-title tva-item-title">
+							<#= model.get('post_title') #>
+							<#= ThriveApp.TVA_DEBUG ? model.get('ID') : '' #>
+							<#= ThriveApp.TVA_DEBUG ? model.get('tva_module_order') : '' #>
+						</h1>
+						<span class="tva-edit-module-name"><?php tva_get_svg_icon( 'adm-edit-w-tar' ); ?></span>
+					</div>
+					<div class="tva-module-options">
+						<a href="javascript:void(0)" class="tva-edit-module">
+							<?php echo __( 'Edit Module Details', TVA_Const::T ) ?>
+						</a>
+						<a href="javascript:void(0)" class="tva-delete-module">
+							<?php echo __( 'Delete Module', TVA_Const::T ) ?>
+						</a>
+						<a href="javascript:void(0)" class="tva-cm-arrow <#= model.get( 'expanded' ) ? 'tva-collapse-module' : 'tva-module-expended' #>"></a>
+					</div>
+				</div>
+				<div class="tva-description-container">
+					<p class="tvd-left tva-item-title tvd-truncate"><#= model.get('post_excerpt') #></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="tva-elements-container <#= (model.hasChildren() === 'lessons') ? 'tva-module-has-lessons' : '' #> "
+     style="<#= !this.model.get( 'expanded' ) ? 'display: none;' : '' #>">
+	<# if ( model.hasChildren() === false ) { #>
+	<div class="tva-items-list tva-chapters-section tva-childs-section"></div>
+	<div class="tva-items-list tva-lessons-section tva-childs-section"></div>
+	<# } #>
+
+	<div class="tva-item-content-options tva-module-content-options">
+		<# if(model.hasChildren() === 'chapters') { #>
+		<a href="javascript:void(0)" class="tva-add-module-chapter-single"><?php _e( '+ Add Chapter', TVA_Const::T ) ?></a>
+		<# } else { #>
+		<a href="javascript:void(0)" class="tva-add-module-lesson"><?php _e( '+ Add Lesson', TVA_Const::T ) ?></a>
+		<a href="javascript:void(0)" class="tva-add-module-chapter"><?php _e( '+ Add Chapter', TVA_Const::T ) ?></a>
+		<# } #>
+
+	</div>
+</div>
+
+
+<style>
+	.tva-drag-module {
+		min-height: 100px;
+		min-width: 10px;
+		background-color: red;
+	}
+
+	.tva-module-disabled {
+		opacity: 0.5;
+	}
+</style>

@@ -1,0 +1,29 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tva-create-state">
+	<h3 class="blue-h3"><?php echo __( 'For several courses purchased', 'thrive-apprentice' ) ?></h3>
+	<p class="checkout-p p-mmb"><#= headlineMsg #></p>
+	<p class="checkout-p p-blue">
+		<?php echo __( 'Why do I need this?', 'thrive-apprentice' ) ?>
+		<span class="tva-status-tooltip">
+			<?php echo __( 'If one of your customers purchases access to more than one course then we will show this thank you page rather than redirecting to the start of one of the courses.', 'thrive-apprentice' ) ?>
+		</span>
+	</p>
+	<input id="tva-sendowl-checkout-page" placeholder="<?php echo __( 'Search an existing page&hellip;', 'thrive-apprentice' ) ?>"
+	       class="tvd-save tva-sendowl-input"
+	       type="text" value="<#= model.get('name') #>" data-field="checkout_page">
+	<br/>
+	<a href="javascript:void(0)" class="tva-create-new-page">
+		<?php tva_get_svg_icon( 'plus-circle' ); ?><?php echo __( 'Create new page', 'thrive-apprentice' ) ?>
+	</a>
+</div>

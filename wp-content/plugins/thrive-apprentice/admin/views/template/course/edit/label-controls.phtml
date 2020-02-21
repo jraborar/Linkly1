@@ -1,0 +1,27 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+<span>
+	<?php echo __( 'Restriction label', TVA_Const::T ) ?>
+</span>
+<a href="javascript:void(0)" class="tva-expand-labels">
+	<# if( model.get('label_color') || model.get('label_default_color') ) { #>
+		<span class="tva-course-label-item tvd-pointer">
+			<span class="sp-replacer sp-light sp-disabled">
+				<span class="sp-preview">
+					<span class="tva-color-label sp-preview-inner" style="background-color: <#= model.get('label_color') ? model.get('label_color') : model.get('label_default_color')  #>"></span>
+				</span>
+			</span>
+		</span>
+	<# } #>
+	<span class="tva-course-label-value"><#= model.get('label_name') ? model.get('label_name') : model.get('members_only') #></span>
+	<i class="ta-caret tvd-right"></i>
+</a>

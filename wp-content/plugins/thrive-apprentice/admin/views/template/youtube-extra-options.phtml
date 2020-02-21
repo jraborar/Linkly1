@@ -1,0 +1,50 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<div class="tvd-col tvd-m4">
+	<div class="tvd-input-field">
+		<input id="tva-video-hide-related" class="tva-extra-checkbox" type="checkbox" name="hide-related" <#= this.model.get('media_extra_options').hasOwnProperty('hide-related') ? 'checked="checked"' : '' #>>
+		<label for="tva-video-hide-related"><?php echo __( 'Optimize related videos', TVA_Const::T ) ?></label>
+	</div>
+</div>
+
+<div class="tvd-col tvd-m4">
+	<div class="tvd-input-field">
+		<input id="tva-video-auto-hide-logo" class="tva-extra-checkbox" type="checkbox" name="hide-logo" <#=
+		this.model.get('media_extra_options').hasOwnProperty('hide-logo') ? 'checked="checked"' : '' #>>
+		<label for="tva-video-auto-hide-logo"><?php echo __( 'Auto-hide Youtube Logo', TVA_Const::T ) ?></label>
+	</div>
+</div>
+
+<div class="tvd-col tvd-m4">
+	<div class="tvd-input-field">
+		<input id="tva-video-auto-hide-controls" class="tva-extra-checkbox" type="checkbox" name="hide-controls" <#=
+		this.model.get('media_extra_options').hasOwnProperty('hide-controls') ? 'checked="checked"' : '' #>>
+		<label for="tva-video-auto-hide-controls"><?php echo __( 'Auto-hide Player Controls', TVA_Const::T ) ?></label>
+	</div>
+</div>
+
+<div class="tvd-col tvd-m4">
+	<div class="tvd-input-field">
+		<input id="tva-video-autoplay" class="tva-extra-checkbox" type="checkbox" name="autoplay" <#=
+		this.model.get('media_extra_options').hasOwnProperty('autoplay') ? 'checked="checked"' : '' #>>
+		<label for="tva-video-autoplay"><?php echo __( 'Autoplay', TVA_Const::T ) ?></label>
+	</div>
+</div>
+
+<div class="tvd-col tvd-m4">
+	<div class="tvd-input-field">
+		<input id="tva-video-hide-full-screen" class="tva-extra-checkbox" type="checkbox" name="hide-full-screen" <#=
+		this.model.get('media_extra_options').hasOwnProperty('hide-full-screen') ? 'checked="checked"' : '' #>>
+		<label for="tva-video-hide-full-screen"><?php echo __( 'Hide Full-Screen Button', TVA_Const::T ) ?></label>
+	</div>
+</div>

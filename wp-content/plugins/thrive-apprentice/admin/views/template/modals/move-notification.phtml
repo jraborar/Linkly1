@@ -1,0 +1,26 @@
+<?php
+/**
+ * Thrive Themes - https://thrivethemes.com
+ *
+ * @package thrive-university
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Silence is golden
+}
+?>
+
+<h3 class="tvd-modal-title"><?php echo __( 'Create New <#= this.args.default_parent_type #>', TVA_Const::T ) ?></h3>
+<p><?php echo __( 'Because you already have <#= this.args.existing_items_type #> in selected <#= this.args.receiver_parent_type #> we will move them into a new <#= this.args.default_parent_type #>.', TVA_Const::T ) ?></p>
+
+<div class="tva-input-field-editor">
+    <div class="tvd-input-field">
+        <input id="tva-item-title" type="text" placeholder="<#= this.args.default_parent_type #><?php echo __( ' Title', TVA_Const::T ) ?>" value="<#= model.get('post_title') #>" data-field="item_name">
+        <label for="tva-item-title" class="tva-custom-label"></label>
+    </div>
+</div>
+
+<div class="tva-modal-footer tva-modal-footer-main">
+	<button type="button" class="tva-modal-prev-step"><?php echo __( 'Prev', TVA_Const::T ) ?></button>
+	<button type="button" class="tvd-modal-submit tvd-right"><?php echo __( 'Move Items', TVA_Const::T ) ?></button>
+</div>
